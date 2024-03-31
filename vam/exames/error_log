@@ -1,0 +1,60 @@
+[25-Apr-2023 18:04:32 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/corrigir_formulario.php on line 48
+[25-Apr-2023 18:06:33 America/Fortaleza] PHP Warning:  mail(): headers parameter must be string or array in /home2/priva674/public_html/vam/exames/corrigir_formulario.php on line 43
+[25-Apr-2023 18:06:46 America/Fortaleza] PHP Warning:  mail(): headers parameter must be string or array in /home2/priva674/public_html/vam/exames/corrigir_formulario.php on line 43
+[25-Apr-2023 18:28:41 America/Fortaleza] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home2/priva674/public_html/vam/exames/questionario.php on line 19
+[25-Apr-2023 18:28:50 America/Fortaleza] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home2/priva674/public_html/vam/exames/questionario.php on line 19
+[25-Apr-2023 18:50:27 America/Fortaleza] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'usuario'@'localhost' (using password: YES) in /home2/priva674/public_html/vam/exames/questionario.php on line 150
+[25-Apr-2023 18:51:14 America/Fortaleza] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'usuario'@'localhost' (using password: YES) in /home2/priva674/public_html/vam/exames/questionario.php on line 57
+[25-Apr-2023 18:51:16 America/Fortaleza] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'usuario'@'localhost' (using password: YES) in /home2/priva674/public_html/vam/exames/questionario.php on line 57
+[25-Apr-2023 18:51:17 America/Fortaleza] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'usuario'@'localhost' (using password: YES) in /home2/priva674/public_html/vam/exames/questionario.php on line 57
+[25-Apr-2023 18:51:49 America/Fortaleza] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'usuario'@'localhost' (using password: YES) in /home2/priva674/public_html/vam/exames/questionario.php on line 57
+[25-Apr-2023 18:51:49 America/Fortaleza] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home2/priva674/public_html/vam/exames/questionario.php on line 68
+[25-Apr-2023 18:51:49 America/Fortaleza] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, boolean given in /home2/priva674/public_html/vam/exames/questionario.php on line 71
+[25-Apr-2023 18:52:25 America/Fortaleza] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'usuario'@'localhost' (using password: YES) in /home2/priva674/public_html/vam/exames/questionario.php on line 57
+[25-Apr-2023 18:52:25 America/Fortaleza] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home2/priva674/public_html/vam/exames/questionario.php on line 68
+[25-Apr-2023 18:52:25 America/Fortaleza] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, boolean given in /home2/priva674/public_html/vam/exames/questionario.php on line 71
+[25-Apr-2023 18:52:47 America/Fortaleza] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'usuario'@'localhost' (using password: YES) in /home2/priva674/public_html/vam/exames/questionario.php on line 57
+[25-Apr-2023 18:52:47 America/Fortaleza] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home2/priva674/public_html/vam/exames/questionario.php on line 68
+[25-Apr-2023 18:52:47 America/Fortaleza] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, boolean given in /home2/priva674/public_html/vam/exames/questionario.php on line 71
+[25-Apr-2023 18:52:55 America/Fortaleza] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'usuario'@'localhost' (using password: YES) in /home2/priva674/public_html/vam/exames/questionario.php on line 57
+[25-Apr-2023 18:52:55 America/Fortaleza] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home2/priva674/public_html/vam/exames/questionario.php on line 68
+[25-Apr-2023 18:52:55 America/Fortaleza] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, boolean given in /home2/priva674/public_html/vam/exames/questionario.php on line 71
+[25-Apr-2023 18:56:44 America/Fortaleza] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'usuario'@'localhost' (using password: YES) in /home2/priva674/public_html/vam/exames/questionario.php on line 59
+[25-Apr-2023 18:57:31 America/Fortaleza] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'usuario'@'localhost' (using password: YES) in /home2/priva674/public_html/vam/exames/questionario.php on line 59
+[25-Apr-2023 18:59:14 America/Fortaleza] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'usuario'@'localhost' (using password: YES) in /home2/priva674/public_html/vam/exames/questionario.php on line 59
+[25-Apr-2023 19:00:48 America/Fortaleza] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'usuario'@'localhost' (using password: YES) in /home2/priva674/public_html/vam/exames/questionario.php on line 5
+[25-Apr-2023 19:01:01 America/Fortaleza] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'usuario'@'localhost' (using password: YES) in /home2/priva674/public_html/vam/exames/questionario.php on line 5
+[25-Apr-2023 19:15:14 America/Fortaleza] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home2/priva674/public_html/vam/exames/candidatos.php on line 34
+[26-Apr-2023 17:21:52 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/candidatos.php on line 83
+[26-Apr-2023 17:22:01 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/candidatos.php on line 83
+[26-Apr-2023 17:26:46 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/priva674/public_html/vam/exames/candidatos.php:1) in /home2/priva674/public_html/vam/exames/candidatos.php on line 48
+[26-Apr-2023 17:26:54 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/priva674/public_html/vam/exames/candidatos.php:1) in /home2/priva674/public_html/vam/exames/candidatos.php on line 48
+[26-Apr-2023 17:27:05 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/priva674/public_html/vam/exames/candidatos.php:1) in /home2/priva674/public_html/vam/exames/candidatos.php on line 48
+[26-Apr-2023 17:27:27 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/priva674/public_html/vam/exames/candidatos.php:1) in /home2/priva674/public_html/vam/exames/candidatos.php on line 48
+[26-Apr-2023 17:41:05 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/candidatos.php on line 116
+[26-Apr-2023 17:41:30 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/candidatos.php on line 115
+[26-Apr-2023 17:41:31 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/candidatos.php on line 115
+[26-Apr-2023 17:41:34 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/candidatos.php on line 115
+[26-Apr-2023 17:42:16 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/priva674/public_html/vam/exames/candidatos.php:20) in /home2/priva674/public_html/vam/exames/candidatos.php on line 29
+[26-Apr-2023 18:14:09 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/priva674/public_html/vam/exames/candidatos.php:20) in /home2/priva674/public_html/vam/exames/candidatos.php on line 29
+[26-Apr-2023 18:54:38 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/corrigir_formulario.php on line 56
+[26-Apr-2023 18:54:46 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/corrigir_formulario.php on line 56
+[26-Apr-2023 18:55:03 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/priva674/public_html/vam/exames/candidatos.php:20) in /home2/priva674/public_html/vam/exames/candidatos.php on line 29
+[26-Apr-2023 18:55:29 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/corrigir_formulario.php on line 56
+[26-Apr-2023 18:59:17 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/corrigir_formulario.php on line 60
+[26-Apr-2023 19:01:14 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/corrigir_formulario.php on line 55
+[26-Apr-2023 19:01:18 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/corrigir_formulario.php on line 55
+[26-Apr-2023 19:09:43 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/corrigir_formulario.php on line 65
+[26-Apr-2023 19:10:12 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/corrigir_formulario.php on line 55
+[26-Apr-2023 19:11:02 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/corrigir_formulario.php on line 55
+[26-Apr-2023 19:11:17 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/exames/corrigir_formulario.php on line 55
+[27-Apr-2023 17:12:37 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to undefined function corrigir_formulario() in /home2/priva674/public_html/vam/exames/processar_formulario.php:25
+Stack trace:
+#0 {main}
+  thrown in /home2/priva674/public_html/vam/exames/processar_formulario.php on line 25
+[27-Apr-2023 18:13:25 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/priva674/public_html/vam/exames/candidatos.php:20) in /home2/priva674/public_html/vam/exames/candidatos.php on line 29
+[27-Apr-2023 18:23:18 America/Fortaleza] PHP Warning:  Division by zero in /home2/priva674/public_html/vam/exames/questionario.php on line 21
+[27-Apr-2023 18:23:47 America/Fortaleza] PHP Warning:  Division by zero in /home2/priva674/public_html/vam/exames/questionario.php on line 21
+[27-Apr-2023 18:24:24 America/Fortaleza] PHP Warning:  Division by zero in /home2/priva674/public_html/vam/exames/questionario.php on line 19
+[30-Apr-2023 21:08:25 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/priva674/public_html/vam/exames/candidatos.php:20) in /home2/priva674/public_html/vam/exames/candidatos.php on line 29
+[17-Sep-2023 10:14:35 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/priva674/public_html/vam/exames/candidatos.php:20) in /home2/priva674/public_html/vam/exames/candidatos.php on line 29

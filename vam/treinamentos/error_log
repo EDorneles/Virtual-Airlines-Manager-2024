@@ -1,0 +1,15 @@
+[06-May-2023 09:58:09 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/treinamentos/treinamento.php on line 116
+[06-May-2023 09:58:36 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/treinamentos/treinamento.php on line 116
+[06-May-2023 09:58:46 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/treinamentos/treinamento.php on line 116
+[06-May-2023 09:59:36 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/treinamentos/treinamento.php on line 95
+[06-May-2023 10:00:10 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/treinamentos/treinamento.php on line 92
+[06-May-2023 10:00:11 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/treinamentos/treinamento.php on line 92
+[06-May-2023 10:00:58 America/Fortaleza] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home2/priva674/public_html/vam/treinamentos/treinamento.php on line 38
+[06-May-2023 10:00:58 America/Fortaleza] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home2/priva674/public_html/vam/treinamentos/treinamento.php on line 58
+[06-May-2023 10:01:05 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/treinamentos/treinamento.php on line 82
+[06-May-2023 10:01:07 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/treinamentos/treinamento.php on line 82
+[06-May-2023 10:01:21 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/treinamentos/treinamento.php on line 82
+[06-May-2023 10:07:21 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/treinamentos/treinamento.php on line 82
+[06-May-2023 10:23:04 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/treinamentos/treinamento.php on line 82
+[06-May-2023 10:31:42 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/treinamentos/treinamento.php on line 82
+[06-May-2023 10:34:32 America/Fortaleza] PHP Parse error:  syntax error, unexpected end of file in /home2/priva674/public_html/vam/treinamentos/treinamento.php on line 82
