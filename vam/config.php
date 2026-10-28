@@ -63,7 +63,13 @@ if ($vamMissingExtensions) {
 	throw new RuntimeException($vamExtensionSetupMessage);
 }
 
-$db_host = (string)$vamDatabaseConfig['host'];
+$db_host = trim((string)$vamDatabaseConfig['host']);
+// PHP's MySQL drivers interpret "localhost" as a Unix socket connection.
+// Plesk PHP-FPM may not have the same socket path as MariaDB; use TCP on the
+// local interface for HelioHost's default local MariaDB server instead.
+if (preg_match('/^localhost(?::3306)?$/i', $db_host)) {
+	$db_host = '127.0.0.1';
+}
 $db_database = (string)$vamDatabaseConfig['database'];
 $db_username = (string)$vamDatabaseConfig['username'];
 $db_password = (string)$vamDatabaseConfig['password'];

@@ -95,6 +95,7 @@ abstract class ObjectCollection {
 		if (empty($this->_enabled)) {
 			return true;
 		}
+		$hasSubject = false;
 		if ($callback instanceof CakeEvent) {
 			$event = $callback;
 			if (is_array($event->data)) {
@@ -102,6 +103,7 @@ abstract class ObjectCollection {
 			}
 			if (empty($event->omitSubject)) {
 				$subject = $event->subject();
+				$hasSubject = true;
 			}
 
 			foreach (array('break', 'breakOn', 'collectReturn', 'modParams') as $opt) {
@@ -127,7 +129,11 @@ abstract class ObjectCollection {
 		foreach ($list as $name) {
 			// Keep event arguments positional. On PHP 8, associative keys passed
 			// to call_user_func_array() are interpreted as named parameters.
-			$result = call_user_func_array(array($this->_loaded[$name], $callback), array_values(compact('subject') + $params));
+			$callParams = array_values($params);
+			if ($hasSubject) {
+				array_unshift($callParams, $subject);
+			}
+			$result = call_user_func_array(array($this->_loaded[$name], $callback), $callParams);
 			if ($options['collectReturn'] === true) {
 				$collected[] = $result;
 			}

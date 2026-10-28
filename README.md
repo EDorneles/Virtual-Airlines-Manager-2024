@@ -8,7 +8,7 @@ Fork of VAM 2.6 with additional Portuguese pages and modules.
 2. In **Websites & Domains → PHP**, select **PHP 8.5.12** and **FastCGI application** as shown in the supplied Plesk screenshot. `.user.ini` sets display errors off and keeps the upload and timeout limits aligned with the screenshot.
 3. Enable the PHP extensions `mysqli`, `pdo_mysql`, `mbstring`, `openssl`, `curl`, `gd`, `fileinfo` and `zip` if they are available in the subscription.
 4. Create a MySQL/MariaDB database and database user in Plesk. Follow [database/README.md](database/README.md) to import the schema and starter data.
-5. Copy `private/vam-db.example.php` to `private/vam-db.php` and enter the Plesk database host, database name, user and password. `private/vam-db.php` is ignored by Git and the `private/` directory denies HTTP access.
+5. Copy `private/vam-db.example.php` to `private/vam-db.php` and enter the Plesk database host, database name, user and password. For a local HelioHost MariaDB server, use `127.0.0.1`; this forces TCP and avoids a missing PHP-FPM Unix socket. The shared config also converts `localhost` (or `localhost:3306`) to `127.0.0.1`. `private/vam-db.php` is ignored by Git and the `private/` directory denies HTTP access.
 6. Make `vam/uploads/` and `vamcore/app/tmp/` writable by the website subscription user. Use the narrowest permissions Plesk allows; do not make the whole project world-writable.
 7. Configure the sender address in `vamcore/app/Config/email.php`, then change the seeded administrator password before opening registration to pilots.
 
