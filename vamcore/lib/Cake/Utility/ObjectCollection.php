@@ -125,7 +125,9 @@ abstract class ObjectCollection {
 		}
 		$result = null;
 		foreach ($list as $name) {
-			$result = call_user_func_array(array($this->_loaded[$name], $callback), compact('subject') + $params);
+			// Keep event arguments positional. On PHP 8, associative keys passed
+			// to call_user_func_array() are interpreted as named parameters.
+			$result = call_user_func_array(array($this->_loaded[$name], $callback), array_values(compact('subject') + $params));
 			if ($options['collectReturn'] === true) {
 				$collected[] = $result;
 			}

@@ -238,7 +238,9 @@ class CakeEventManager {
 				break;
 			}
 			if ($listener['passParams'] === true) {
-				$result = call_user_func_array($listener['callable'], $event->data);
+				// Event payloads are positional in CakePHP. array_values() keeps
+				// associative payload keys from becoming PHP 8 named arguments.
+				$result = call_user_func_array($listener['callable'], array_values($event->data));
 			} else {
 				$result = call_user_func($listener['callable'], $event);
 			}
