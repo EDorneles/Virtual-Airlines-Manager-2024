@@ -1,0 +1,9 @@
+# Local secrets and hosting configuration
+/private/vam-db.php
+/.env
+/.env.*
+
+# Runtime output
+/vamcore/app/tmp/
+**/error_log
+*.log

@@ -1,4 +1,6 @@
 <?php
+require_once dirname(__DIR__) . '/legacy_mysql.php';
+
 	/*--HEADER--------------------------------------------------------------------------*/
 	/*                                                                                  */
 	/*    Project   : Live ACARS Demo PIREP Service v3.0.1                              */
@@ -20,13 +22,13 @@
 	if (!isset($_REQUEST["ID"])) die("There is no PIREP ID given.");
 	$pirepfsfk_id = $_REQUEST["ID"];
 	/* Connect to Database */
-	$link = mysql_connect("localhost" , "xxxxx" , "xxxxx") or die("SQL Server connection failed.");
-	mysql_select_db("xxxxx") or die("Database connection failed.");
+	$link = mysql_connect() or die("SQL Server connection failed.");
+	mysql_select_db($db_database) or die("Database connection failed.");
 	// Execute SQL query
 	$query = "SELECT * from pirepfsfk WHERE pirepfsfk_id = '" . $pirepfsfk_id . "'";
 	$result = mysql_query($query) or die("SQL query failed.");
 	if (mysql_num_rows($result) == 0) die("There is no PIREP with the given ID.");
-	$row = mysql_fetch_object($result)
+	$row = mysql_fetch_object($result);
 ?>
 <html>
 <head>

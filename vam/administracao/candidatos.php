@@ -45,11 +45,9 @@
         </tr>
 
         <?php
+require_once dirname(__DIR__) . '/config.php';
+
         // Configurações do banco de dados
-        $db_host = 'localhost';
-        $db_database = 'priva674_2023';
-        $db_username = 'priva674_2023';
-        $db_password = 'OnlyPrivate2023@';
 
         // Conexão com o banco de dados
         $conn = new mysqli($db_host, $db_username, $db_password, $db_database);

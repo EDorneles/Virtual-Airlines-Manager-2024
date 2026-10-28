@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/config.php';
+
 // Verifica se o parâmetro "id" foi passado na URL
 if (isset($_GET['id'])) {
     // Obtém o ID do comentário a ser editado
@@ -7,11 +9,6 @@ if (isset($_GET['id'])) {
     // Verifica se o formulário foi enviado
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Processa os dados do formulário e atualiza o comentário no banco de dados
-        // Substitua os campos "localhost", "priva674_2023", "priva674_2023" e "OnlyPrivate2023@" pelas informações do seu banco de dados
-        $db_host = 'localhost';
-        $db_database = 'priva674_2023';
-        $db_username = 'priva674_2023';
-        $db_password = 'OnlyPrivate2023@';
 
         // Conexão com o banco de dados
         $conn = new mysqli($db_host, $db_username, $db_password, $db_database);
@@ -39,11 +36,6 @@ if (isset($_GET['id'])) {
     }
 
     // Aqui você pode recuperar os dados do comentário do banco de dados com base no ID
-    // Substitua os campos "localhost", "priva674_2023", "priva674_2023" e "OnlyPrivate2023@" pelas informações do seu banco de dados
-    $db_host = 'localhost';
-    $db_database = 'priva674_2023';
-    $db_username = 'priva674_2023';
-    $db_password = 'OnlyPrivate2023@';
 
     // Conexão com o banco de dados
     $conn = new mysqli($db_host, $db_username, $db_password, $db_database);

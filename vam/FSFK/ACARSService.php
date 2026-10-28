@@ -1,4 +1,6 @@
 <?php
+require_once dirname(__DIR__) . '/legacy_mysql.php';
+
 
 	/*--HEADER--------------------------------------------------------------------------*/
 	/*                                                                                  */
@@ -81,10 +83,10 @@
 	//$Message =str_replace("'", "''", $Message);
 
 	/* Connect to Database */
-	$link = mysql_connect("host" , "user" , "password")
+	$link = mysql_connect()
 	or die("0|Server connection failed");
 
-	mysql_select_db("ddb2575") or die("0|Database connection failed");
+	mysql_select_db($db_database) or die("0|Database connection failed");
 
 	/* ### Added v2.6 ### */
 	/* Delete not responding flights (LastMessage older than 30 minutes) */

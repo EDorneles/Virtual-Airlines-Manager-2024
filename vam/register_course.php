@@ -1,14 +1,12 @@
 <?php
+require_once __DIR__ . '/config.php';
+
 session_start();
 
 require('check_login.php');
 
 // Verifique se o usuário está logado
 if (is_logged()) {
-    $db_host = 'localhost';
-    $db_database = 'priva674_2023';
-    $db_username = 'priva674_2023';
-    $db_password = 'OnlyPrivate2023@';
 
     $db = new mysqli($db_host, $db_username, $db_password, $db_database);
     $db->set_charset("utf8");
@@ -53,22 +51,22 @@ if (is_logged()) {
 
     // Verifique se o curso_id foi fornecido na URL
     if (isset($_GET["course_id"])) {
-        $course_id = $_GET["course_id"];
+        $course_id = filter_var($_GET["course_id"], FILTER_VALIDATE_INT);
 
         // Verifique se $id e $course_id estão definidos
-        if (isset($id) && isset($course_id)) {
+        if (isset($id) && $course_id !== false && $course_id > 0) {
             // Verifique se o piloto já está inscrito no curso
-            $check_query = "SELECT * FROM courses WHERE course_id = ? AND user_id = ?";
+            $check_query = "SELECT 1 FROM course_enrollments WHERE course_id = ? AND user_id = ?";
             if ($stmt = $db->prepare($check_query)) {
-                $stmt->bind_param("ss", $course_id, $id);
+                $stmt->bind_param("ii", $course_id, $id);
                 $stmt->execute();
                 $check_result = $stmt->get_result();
 
                 if ($check_result->num_rows == 0) {
                     // O piloto não está inscrito no curso, então inscreva-o
-                    $insert_query = "INSERT INTO courses (course_id, user_id) VALUES (?, ?)";
+                    $insert_query = "INSERT INTO course_enrollments (course_id, user_id) VALUES (?, ?)";
                     if ($stmt = $db->prepare($insert_query)) {
-                        $stmt->bind_param("ss", $course_id, $id);
+                        $stmt->bind_param("ii", $course_id, $id);
                         if ($stmt->execute()) {
                             // Inserção bem-sucedida
                             header("Location: curso_page.php"); // Redirecione de volta para a página de cursos

@@ -2962,8 +2962,10 @@ class DboSource extends DataSource {
 		$keys = array_filter($keys);
 
 		$result = array();
+		reset($keys);
 		while (!empty($keys)) {
-			list($key, $dir) = each($keys);
+			$key = key($keys);
+			$dir = current($keys);
 			array_shift($keys);
 
 			if (is_numeric($key)) {

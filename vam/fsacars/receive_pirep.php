@@ -54,7 +54,7 @@
 			die('Unable to connect to database [' . $db->connect_error . ']');
 			return 0;
 		}
-		$the_pilot = ereg_replace("[^0-9]" , "" , $pirep_array['pilot']);
+		$the_pilot = preg_replace('/[^0-9]/', '', $pirep_array['pilot']);
 		$sql = "select gvauser_id as pilotid from gvausers where activation=1 and gvauser_id='" . $the_pilot . "'";
 		if (!$result = $db->query($sql)) {
 			die('There was an error running the query [' . $db->error . ']');

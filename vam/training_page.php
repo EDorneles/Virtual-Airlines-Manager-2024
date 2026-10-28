@@ -1,11 +1,9 @@
 <?php
+require_once __DIR__ . '/config.php';
+
 session_start();
 
 // Configurações do banco de dados
-$db_host = 'localhost';
-$db_database = 'priva674_2023';
-$db_username = 'priva674_2023';
-$db_password = 'OnlyPrivate2023@';
 
 // Conecte-se ao banco de dados
 $db = new mysqli($db_host, $db_username, $db_password, $db_database);

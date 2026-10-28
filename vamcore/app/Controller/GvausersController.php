@@ -83,7 +83,7 @@ class GvausersController extends AppController {
 
 		if ($this->request->is('post') || $this->request->is('put')) {
             // VAM send email with callsign to the user BEGIN
-            include ('../../../vam/db_login.php');
+            require_once dirname(__DIR__, 3) . '/vam/db_login.php';
             $senderemail='';
             $db = new mysqli($db_host , $db_username , $db_password , $db_database);
 			$db->set_charset("utf8");

@@ -17,10 +17,10 @@
 		$metar = '';
 		$fileData = @file($fileName) or die('METAR not available');
 		if ($fileData != false) {
-			list($i , $date) = each($fileData);
+			$date = array_shift($fileData);
 			$utc = strtotime(trim($date));
 			$time = date("D, F jS Y g:i A" , $utc);
-			while (list($i , $line) = each($fileData)) {
+			foreach ($fileData as $line) {
 				$metar .= ' ' . trim($line);
 			}
 			$metar = trim(str_replace('  ' , ' ' , $metar));

@@ -1,4 +1,6 @@
 <?php
+require __DIR__ . '/config.php';
+
 	/**
 	 * @Project: Virtual Airlines Manager (VAM)
 	 * @Author: Alejandro Garcia
@@ -11,8 +13,4 @@
 	 */
 ?>
 <?php
-	$db_host = 'localhost';
-	$db_database = 'priva674_2023';
-	$db_username = 'priva674_2023';
-	$db_password = 'OnlyPrivate2023@';
 ?>

@@ -12,7 +12,12 @@
     include('review_pilot_rank.php');
 
     // Consulta SQL para obter os dados da tabela courses
-    $sql = "SELECT course_id, name, description, content, start_date, end_date, callsign FROM courses";
+    $sql = "SELECT c.course_id, c.name, c.description, c.content, c.start_date, c.end_date,
+                   (SELECT GROUP_CONCAT(u.callsign ORDER BY u.callsign SEPARATOR ', ')
+                    FROM course_enrollments ce
+                    INNER JOIN gvausers u ON u.gvauser_id = ce.user_id
+                    WHERE ce.course_id = c.course_id) AS callsign
+            FROM courses c";
 
     // Executar a consulta SQL
     if (!$result = $db->query($sql)) {

@@ -1,4 +1,6 @@
 <?php
+require_once dirname(__DIR__) . '/legacy_mysql.php';
+
 	/*
 	 * You may not remove this header!
 	 *

@@ -260,24 +260,44 @@ class Security {
 			trigger_error(__d('cake_dev', 'You must use a key larger than 32 bytes for Security::rijndael()'), E_USER_WARNING);
 			return '';
 		}
-		$algorithm = MCRYPT_RIJNDAEL_256;
-		$mode = MCRYPT_MODE_CBC;
-		$ivSize = mcrypt_get_iv_size($algorithm, $mode);
-
 		$cryptKey = substr($key, 0, 32);
-
-		if ($operation === 'encrypt') {
-			$iv = mcrypt_create_iv($ivSize, MCRYPT_RAND);
-			return $iv . '$$' . mcrypt_encrypt($algorithm, $cryptKey, $text, $mode, $iv);
-		}
-		// Backwards compatible decrypt with fixed iv
-		if (substr($text, $ivSize, 2) !== '$$') {
-			$iv = substr($key, strlen($key) - 32, 32);
+		if (function_exists('mcrypt_get_iv_size')) {
+			$algorithm = MCRYPT_RIJNDAEL_256;
+			$mode = MCRYPT_MODE_CBC;
+			$ivSize = mcrypt_get_iv_size($algorithm, $mode);
+			if ($operation === 'encrypt') {
+				$iv = mcrypt_create_iv($ivSize, MCRYPT_RAND);
+				return $iv . '$$' . mcrypt_encrypt($algorithm, $cryptKey, $text, $mode, $iv);
+			}
+			if (substr($text, $ivSize, 2) !== '$$') {
+				$iv = substr($key, strlen($key) - 32, 32);
+				return rtrim(mcrypt_decrypt($algorithm, $cryptKey, $text, $mode, $iv), "\0");
+			}
+			$iv = substr($text, 0, $ivSize);
+			$text = substr($text, $ivSize + 2);
 			return rtrim(mcrypt_decrypt($algorithm, $cryptKey, $text, $mode, $iv), "\0");
 		}
-		$iv = substr($text, 0, $ivSize);
-		$text = substr($text, $ivSize + 2);
-		return rtrim(mcrypt_decrypt($algorithm, $cryptKey, $text, $mode, $iv), "\0");
+
+		// PHP 7.2+ no longer ships mcrypt. Use AES-256-CBC for new cookies;
+		// old mcrypt-only values are rejected when that extension is unavailable.
+		$prefix = 'openssl-aes256-cbc$$';
+		if ($operation === 'encrypt') {
+			$ivSize = openssl_cipher_iv_length('aes-256-cbc');
+			$iv = random_bytes($ivSize);
+			$ciphertext = openssl_encrypt($text, 'aes-256-cbc', $cryptKey, OPENSSL_RAW_DATA, $iv);
+			return ($ciphertext === false) ? '' : $prefix . $iv . '$$' . $ciphertext;
+		}
+		if (strpos($text, $prefix) !== 0) {
+			return '';
+		}
+		$payload = substr($text, strlen($prefix));
+		$ivSize = openssl_cipher_iv_length('aes-256-cbc');
+		$iv = substr($payload, 0, $ivSize);
+		if (strlen($iv) !== $ivSize || substr($payload, $ivSize, 2) !== '$$') {
+			return '';
+		}
+		$plain = openssl_decrypt(substr($payload, $ivSize + 2), 'aes-256-cbc', $cryptKey, OPENSSL_RAW_DATA, $iv);
+		return ($plain === false) ? '' : rtrim($plain, "\0");
 	}
 
 /**
@@ -349,12 +369,9 @@ class Security {
 		// Generate the encryption and hmac key.
 		$key = substr(hash('sha256', $key . $hmacSalt), 0, 32);
 
-		$algorithm = MCRYPT_RIJNDAEL_128;
-		$mode = MCRYPT_MODE_CBC;
-
-		$ivSize = mcrypt_get_iv_size($algorithm, $mode);
-		$iv = mcrypt_create_iv($ivSize, MCRYPT_DEV_URANDOM);
-		$ciphertext = $iv . mcrypt_encrypt($algorithm, $key, $plain, $mode, $iv);
+		$ivSize = openssl_cipher_iv_length('aes-256-cbc');
+		$iv = random_bytes($ivSize);
+		$ciphertext = $iv . openssl_encrypt($plain, 'aes-256-cbc', $key, OPENSSL_RAW_DATA, $iv);
 		$hmac = hash_hmac('sha256', $ciphertext, $key);
 		return $hmac . $ciphertext;
 	}
@@ -404,13 +421,18 @@ class Security {
 			return false;
 		}
 
-		$algorithm = MCRYPT_RIJNDAEL_128;
-		$mode = MCRYPT_MODE_CBC;
-		$ivSize = mcrypt_get_iv_size($algorithm, $mode);
+		$ivSize = openssl_cipher_iv_length('aes-256-cbc');
 
 		$iv = substr($cipher, 0, $ivSize);
 		$cipher = substr($cipher, $ivSize);
-		$plain = mcrypt_decrypt($algorithm, $key, $cipher, $mode, $iv);
+		$plain = openssl_decrypt($cipher, 'aes-256-cbc', $key, OPENSSL_RAW_DATA, $iv);
+		if ($plain === false) {
+			// Read legacy mcrypt ciphertexts, which used zero padding.
+			$plain = openssl_decrypt($cipher, 'aes-256-cbc', $key, OPENSSL_RAW_DATA | OPENSSL_ZERO_PADDING, $iv);
+		}
+		if ($plain === false) {
+			return false;
+		}
 		return rtrim($plain, "\0");
 	}
 

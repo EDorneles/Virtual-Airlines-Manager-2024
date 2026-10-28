@@ -1,4 +1,6 @@
 <?php
+require_once dirname(__DIR__) . '/legacy_mysql.php';
+
 	/*--HEADER--------------------------------------------------------------------------*/
 	/*                                                                                  */
 	/*    Project   : Live ACARS Demo PIREP Service v3.0.1                              */
@@ -23,8 +25,8 @@
 	header("Cache-Control: post-check=0, pre-check=0" , false);
 	header("Pragma: no-cache");
 	/* Connect to Database */
-	$link = mysql_connect("host" , "user" , "password") or die("SQL Server connection failed.");
-	mysql_select_db("ddb2575") or die("Database connection failed.");
+	$link = mysql_connect() or die("SQL Server connection failed.");
+	mysql_select_db($db_database) or die("Database connection failed.");
 	// Execute SQL query
 	$query = "SELECT IDPIREP, CreatedOn, IDPilot, PilotName, Airline, FlightNumber, OriginAirport, DestinationAirport, BlockTime, OFFTime, FlightFuel from pirepfsfk ORDER BY CreatedON DESC";
 	$result = mysql_query($query) or die("SQL query failed.");

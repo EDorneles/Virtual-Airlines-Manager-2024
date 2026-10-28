@@ -1,0 +1,20 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteRule ^\.git(?:/|$) - [F,L]
+	RewriteRule ^private(?:/|$) - [F,L]
+	RewriteRule ^(?:database|Data_Base_Scritps)(?:/|$) - [F,L]
+</IfModule>
+
+<IfModule mod_authz_core.c>
+	<FilesMatch "(?i)(^\.|\.(?:sql|env|ini|log|bak|dist|example)$)">
+		Require all denied
+	</FilesMatch>
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+	<FilesMatch "(?i)(^\.|\.(?:sql|env|ini|log|bak|dist|example)$)">
+		Deny from all
+	</FilesMatch>
+</IfModule>

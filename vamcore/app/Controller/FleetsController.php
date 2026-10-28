@@ -52,7 +52,7 @@ class FleetsController extends AppController {
 		$this->set(compact('hubs'));
 		
 		if ($this->request->is('post')) {
-				include ('../../../vam/db_login.php');
+				require_once dirname(__DIR__, 3) . '/vam/db_login.php';
 				$fleettype_id=$this->data['Fleet']['fleettype_id'];
 				$registry=$this->data['Fleet']['registry'];
 				$name=$this->data['Fleet']['name'];

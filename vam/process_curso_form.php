@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/config.php';
+
 // Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtém os valores enviados pelo formulário
@@ -13,10 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Realize as validações necessárias antes de inserir os dados no banco de dados
 
     // Realize a conexão com o banco de dados
-    $db_host = 'localhost';
-$db_database = 'priva674_2023';
-$db_username = 'priva674_2023';
-$db_password = 'OnlyPrivate2023@';
 
     $db = new mysqli($db_host, $db_username, $db_password, $db_database);
     $db->set_charset("utf8");

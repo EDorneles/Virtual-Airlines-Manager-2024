@@ -1,14 +1,12 @@
 <?php
+require_once __DIR__ . '/config.php';
+
     session_start();
 
     // Verificar se o usuário tem acesso ao validador de voos (ou ao que você deseja permitir)
     $is_admin = ($_SESSION["access_administration_panel"] === '1' || $_SESSION["access_administration_panel"] === '1');
 
     // Verificar a conexão com o banco de dados
-    $db_host = 'localhost';
-	$db_database = 'priva674_2023';
-	$db_username = 'priva674_2023';
-	$db_password = 'OnlyPrivate2023@';
 
     $db = new mysqli($db_host, $db_username, $db_password, $db_database);
 

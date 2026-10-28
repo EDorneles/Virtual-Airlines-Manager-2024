@@ -1,4 +1,6 @@
 <?php
+require_once dirname(__DIR__) . '/legacy_mysql.php';
+
 
 	/*--HEADER--------------------------------------------------------------------------*/
 	/*                                                                                  */
@@ -56,9 +58,9 @@
 	}
 
 	/* Connect to Database */
-	$link = mysql_connect("host" , "user" , "password") or die("");
+	$link = mysql_connect() or die("");
 
-	mysql_select_db("ddb2575") or die("");
+	mysql_select_db($db_database) or die("");
 
 	/* ### Added v2.6 ### */
 	/* Delete not responding flights (LastMessage older than 30 minutes) */

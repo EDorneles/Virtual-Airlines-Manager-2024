@@ -1,4 +1,6 @@
 <?php
+require_once dirname(__DIR__) . '/legacy_mysql.php';
+
 
 	/*--HEADER--------------------------------------------------------------------------*/
 	/*                                                                                  */
@@ -74,10 +76,10 @@
 	}
 
 	/* Connect to Database */
-	$link = mysql_connect("host" , "user" , "password")
+	$link = mysql_connect()
 	or die("SQL Server connection failed.");
 
-	mysql_select_db("ddb2575") or die("Database connection failed.");
+	mysql_select_db($db_database) or die("Database connection failed.");
 
 	/* Delete not responding flights (LastMessage older than 30 minutes) */
 	$query = "DELETE FROM liveacars WHERE LastMessage <= " . date("YmdHis" , dateadd("n" , -30 , time())) . ";";

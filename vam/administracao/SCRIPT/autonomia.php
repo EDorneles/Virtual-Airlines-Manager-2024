@@ -1,9 +1,7 @@
 <?php
+require_once dirname(__DIR__, 2) . '/config.php';
+
 // Configurações do banco de dados
-$db_host = 'localhost';
-$db_database = 'priva674_2023';
-$db_username = 'priva674_2023';
-$db_password = 'OnlyPrivate2023@';
 
 // Conexão com o banco de dados
 $db = new PDO("mysql:host=$db_host;dbname=$db_database;charset=utf8mb4", $db_username, $db_password);

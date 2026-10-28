@@ -34,6 +34,8 @@
     <h1>Editar Rota</h1>
 
     <?php
+require_once dirname(__DIR__) . '/config.php';
+
     // Verificar se o formulário foi enviado
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Obter os dados do formulário
@@ -54,10 +56,6 @@
         $flightLevel = $_POST["flight_level"];
 
         // Configurações do banco de dados
-        $db_host = 'localhost';
-        $db_database = 'priva674_2023';
-        $db_username = 'priva674_2023';
-        $db_password = 'OnlyPrivate2023@';
 
         // Conexão com o banco de dados
         $conn = new mysqli($db_host, $db_username, $db_password, $db_database);
@@ -83,10 +81,6 @@
         // Coloque aqui o código para obter os detalhes da rota do banco de dados
 
                 // Configurações do banco de dados
-        $db_host = 'localhost';
-        $db_database = 'priva674_2023';
-        $db_username = 'priva674_2023';
-        $db_password = 'OnlyPrivate2023@';
 
         // Conexão com o banco de dados
         $conn = new mysqli($db_host, $db_username, $db_password, $db_database);

@@ -1,15 +1,10 @@
 <?php
+require_once dirname(__DIR__) . '/legacy_mysql.php';
 
-	
-$hostName = "localhost";
-/* CHANGE THESE LINES TO YOUR DETAILS */
-$userName = "";
-$password = "";
-$dbName = "";
 
-/* make connection to database */
-mysql_connect($hostName, $userName, $password) or die("Unable to connect to host $hostName");
-mysql_select_db($dbName) or die("Unable to select database $dbName");
+
+mysql_connect() or die("Unable to connect to the configured database");
+mysql_select_db($db_database) or die("Unable to select the configured database");
 
 $lat = $_GET['lat'];
 $long = $_GET['long'];

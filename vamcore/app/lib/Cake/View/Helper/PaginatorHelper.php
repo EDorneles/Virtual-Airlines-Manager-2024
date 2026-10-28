@@ -1005,7 +1005,7 @@ class PaginatorHelper extends AppHelper {
 				'link' => $this->url(array_merge($urlOptions, array('page' => $params['page'] + 1)), true)
 			));
 		}
-		$out = implode($links);
+		$out = implode('', $links);
 		if (empty($options['block'])) {
 			return $out;
 		}

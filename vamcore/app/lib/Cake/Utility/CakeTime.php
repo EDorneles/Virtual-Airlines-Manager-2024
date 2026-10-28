@@ -1170,7 +1170,11 @@ class CakeTime {
 				$valid = Multibyte::checkMultibyte($format);
 			}
 			if (!$valid) {
-				$format = utf8_encode($format);
+				if (function_exists('mb_convert_encoding')) {
+					$format = mb_convert_encoding($format, 'UTF-8', 'ISO-8859-1');
+				} elseif (function_exists('iconv')) {
+					$format = iconv('ISO-8859-1', 'UTF-8', $format);
+				}
 			}
 		}
 		return $format;
