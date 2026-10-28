@@ -27,12 +27,40 @@ if (is_file($vamConfigPath)) {
 	$vamDatabaseConfig = array_merge($vamDatabaseConfig, $vamLocalDatabaseConfig);
 }
 
+$vamDatabaseSetupMessage = null;
 foreach (array('host', 'database', 'username', 'password') as $vamRequiredSetting) {
-	if (!isset($vamDatabaseConfig[$vamRequiredSetting]) || $vamDatabaseConfig[$vamRequiredSetting] === '') {
-		throw new RuntimeException(
-			'Banco de dados não configurado. Crie private/vam-db.php a partir do exemplo ou configure as variáveis VAM_DB_*.'
-		);
+	$vamSettingValue = isset($vamDatabaseConfig[$vamRequiredSetting]) ? (string)$vamDatabaseConfig[$vamRequiredSetting] : '';
+	if ($vamSettingValue === '' || preg_match('/^(YOUR_PLESK_|CHANGE_THIS_)/', $vamSettingValue)) {
+		$vamDatabaseSetupMessage = 'Banco de dados não configurado. Crie private/vam-db.php a partir do exemplo, preencha as credenciais do Plesk e importe os scripts descritos em database/README.md.';
+		break;
 	}
+}
+
+if ($vamDatabaseSetupMessage !== null) {
+	if (PHP_SAPI !== 'cli') {
+		http_response_code(503);
+		header('Content-Type: text/html; charset=utf-8');
+		echo '<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>Configuração necessária</title><h1>Banco de dados ainda não configurado</h1><p>' . htmlspecialchars($vamDatabaseSetupMessage, ENT_QUOTES, 'UTF-8') . '</p></html>';
+		exit;
+	}
+	throw new RuntimeException($vamDatabaseSetupMessage);
+}
+
+$vamMissingExtensions = array();
+foreach (array('mysqli', 'pdo_mysql') as $vamRequiredExtension) {
+	if (!extension_loaded($vamRequiredExtension)) {
+		$vamMissingExtensions[] = $vamRequiredExtension;
+	}
+}
+if ($vamMissingExtensions) {
+	$vamExtensionSetupMessage = 'Ative as extensões PHP necessárias no Plesk: ' . implode(', ', $vamMissingExtensions) . '.';
+	if (PHP_SAPI !== 'cli') {
+		http_response_code(503);
+		header('Content-Type: text/html; charset=utf-8');
+		echo '<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>Configuração necessária</title><h1>Extensão PHP necessária</h1><p>' . htmlspecialchars($vamExtensionSetupMessage, ENT_QUOTES, 'UTF-8') . '</p></html>';
+		exit;
+	}
+	throw new RuntimeException($vamExtensionSetupMessage);
 }
 
 $db_host = (string)$vamDatabaseConfig['host'];
