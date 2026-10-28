@@ -1,0 +1,174 @@
+:root {
+  --ppt-ink: #12243c;
+  --ppt-muted: #718198;
+  --ppt-navy: #0a1c32;
+  --ppt-navy-soft: #102a46;
+  --ppt-blue: #1769e0;
+  --ppt-cyan: #39c8d5;
+  --ppt-line: #e2e9f1;
+  --ppt-canvas: #f3f6fa;
+  --ppt-white: #fff;
+  --ppt-shadow: 0 12px 34px rgba(17, 43, 75, .07);
+}
+
+body.vam-2026 {
+  color: var(--ppt-ink);
+  background: var(--ppt-canvas);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+body.vam-2026 .wrapper { min-height: 100vh; background: var(--ppt-canvas); }
+body.vam-2026 .main-header { max-height: 72px; background: var(--ppt-white); }
+body.vam-2026 .main-header .logo {
+  display: flex;
+  width: 260px;
+  height: 72px;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  padding: 0 18px;
+  color: #fff;
+  background: var(--ppt-navy);
+  text-align: left;
+}
+body.vam-2026 .logo-mini { display: grid !important; width: 38px; height: 38px; place-items: center; border: 1px solid rgba(93, 211, 229, .45); border-radius: 12px; color: #75dfeb; background: rgba(56, 151, 196, .17); font-size: 18px; }
+body.vam-2026 .logo-lg { display: flex !important; align-items: baseline; gap: 7px; color: #fff; font-size: 15px; font-weight: 800; letter-spacing: .12em; }
+body.vam-2026 .logo-lg b { color: #fff; }
+body.vam-2026 .logo-lg small { color: #91a7bf; font-size: 9px; font-weight: 700; letter-spacing: .12em; }
+body.vam-2026 .main-header .navbar {
+  min-height: 72px;
+  margin-left: 260px;
+  border: 0;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(218, 228, 239, .9);
+}
+body.vam-2026 .main-header .sidebar-toggle { height: 72px; padding: 25px 22px; color: #5b6f87; }
+body.vam-2026 .main-header .sidebar-toggle:hover { color: var(--ppt-blue); background: #f4f8fc; }
+body.vam-2026 .main-sidebar { width: 260px; padding-top: 72px; background: var(--ppt-navy); box-shadow: 9px 0 28px rgba(9, 26, 47, .09); }
+body.vam-2026 .sidebar { padding-top: 13px; }
+body.vam-2026 .user-panel { min-height: 74px; margin: 0 15px 15px; padding: 13px 0; border-bottom: 1px solid rgba(205, 222, 242, .13); }
+body.vam-2026 .user-panel > .image > img { width: 43px; height: 43px; border: 2px solid rgba(97, 201, 226, .5); object-fit: cover; }
+body.vam-2026 .user-panel > .info { left: 58px; padding: 3px 5px 5px; }
+body.vam-2026 .user-panel > .info > p { max-width: 160px; margin-bottom: 8px; overflow: hidden; color: #eff5fc; font-size: 11px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+body.vam-2026 .user-panel > .info > a { color: #9fb2ca; font-size: 10px; }
+body.vam-2026 .user-panel > .info > a:hover { color: #7bdce8; }
+body.vam-2026 .sidebar-form { margin: 0 15px 17px; border: 1px solid rgba(196, 216, 239, .15); border-radius: 10px; background: rgba(255, 255, 255, .06); }
+body.vam-2026 .sidebar-form input[type="text"] { height: 38px; color: #f1f6fd; background: transparent; }
+body.vam-2026 .sidebar-form input::placeholder { color: #8ea4bf; }
+body.vam-2026 .sidebar-form .btn { height: 38px; color: #92a9c3; background: transparent; }
+body.vam-2026 .sidebar-menu > li.header { padding: 16px 25px 7px; color: #7087a2; font-size: 9px; font-weight: 800; letter-spacing: .16em; }
+body.vam-2026 .sidebar-menu > li > a { margin: 3px 11px; padding: 11px 13px; border-radius: 9px; color: #bdcadd; font-size: 12px; font-weight: 580; transition: color .15s, background .15s; }
+body.vam-2026 .sidebar-menu > li > a > .fa,
+body.vam-2026 .sidebar-menu > li > a > .glyphicon,
+body.vam-2026 .sidebar-menu > li > a > .ion { width: 22px; color: #8ea8c6; font-size: 15px; }
+body.vam-2026 .sidebar-menu > li > a:hover { color: #fff; background: rgba(255, 255, 255, .075); }
+body.vam-2026 .sidebar-menu > li.active > a,
+body.vam-2026 .sidebar-menu > li.menu-open > a { border-left: 0; color: #fff; background: rgba(35, 111, 201, .28); box-shadow: inset 3px 0 #56cbe0; }
+body.vam-2026 .sidebar-menu > li.active > a > .fa,
+body.vam-2026 .sidebar-menu > li.menu-open > a > .fa { color: #73deea; }
+body.vam-2026 .sidebar-menu .treeview-menu { padding: 3px 0 5px 12px; background: rgba(0, 0, 0, .12); }
+body.vam-2026 .sidebar-menu .treeview-menu > li > a { padding: 9px 10px 9px 23px; color: #9fb2c9; font-size: 11px; }
+body.vam-2026 .sidebar-menu .treeview-menu > li > a:hover { color: #fff; background: transparent; }
+body.vam-2026 .sidebar-menu [hidden] { display: none !important; }
+body.vam-2026 .sidebar-menu > li.vam-nav-primary > a,
+body.vam-2026 .sidebar-menu > li.bg-green > a { margin-top: 8px; color: #fff; background: linear-gradient(105deg, #1769e0, #2589cc) !important; box-shadow: 0 7px 18px rgba(13, 96, 190, .24); }
+body.vam-2026 .sidebar-menu > li.vam-nav-primary > a .fa,
+body.vam-2026 .sidebar-menu > li.bg-green > a .fa { color: #fff !important; }
+body.vam-2026 .sidebar-menu .label { border-radius: 999px; font-size: 9px; font-weight: 750; }
+body.vam-2026 .content-wrapper, body.vam-2026 .right-side { min-height: 100vh; margin-left: 260px; background: var(--ppt-canvas); }
+body.vam-2026 .content-header { padding: 27px 32px 0; }
+body.vam-2026 .content-header h1 { margin: 0; color: var(--ppt-ink); font-size: 22px; font-weight: 740; letter-spacing: -.035em; }
+body.vam-2026 .content-header h1 a { color: inherit; text-decoration: none; }
+body.vam-2026 .content-header h1 small { display: block; margin-top: 5px; color: var(--ppt-muted); font-size: 11px; font-weight: 500; }
+body.vam-2026 .content { min-height: 68vh; padding: 22px 32px 36px; }
+body.vam-2026 .box, body.vam-2026 .info-box, body.vam-2026 .small-box, body.vam-2026 .nav-tabs-custom, body.vam-2026 .direct-chat {
+  overflow: hidden;
+  border: 1px solid var(--ppt-line);
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: var(--ppt-shadow);
+}
+body.vam-2026 .box { border-top-width: 1px; border-top-color: var(--ppt-line); }
+body.vam-2026 .box-header { padding: 18px 20px; border-bottom: 1px solid #edf1f5; }
+body.vam-2026 .box-title { color: var(--ppt-ink); font-size: 15px; font-weight: 730; }
+body.vam-2026 .box-body { padding: 20px; }
+body.vam-2026 .box-footer { padding: 14px 20px; border-top: 1px solid #edf1f5; background: #fbfcfe; }
+body.vam-2026 .info-box { min-height: 94px; }
+body.vam-2026 .info-box-icon { width: 72px; height: 92px; padding-top: 21px; border-radius: 0; color: var(--ppt-blue); background: #eaf3ff; font-size: 29px; }
+body.vam-2026 .info-box-content { padding: 16px 17px; }
+body.vam-2026 .info-box-text { color: var(--ppt-muted); font-size: 10px; font-weight: 750; letter-spacing: .06em; text-transform: uppercase; }
+body.vam-2026 .info-box-number { color: var(--ppt-ink); font-size: 24px; font-weight: 780; }
+body.vam-2026 .small-box { color: var(--ppt-ink); }
+body.vam-2026 .small-box.bg-red, body.vam-2026 .small-box.bg-blue, body.vam-2026 .small-box.bg-green, body.vam-2026 .small-box.bg-aqua, body.vam-2026 .small-box.bg-yellow, body.vam-2026 .small-box.bg-light-blue { color: var(--ppt-ink) !important; background: #fff !important; }
+body.vam-2026 .small-box > .inner { padding: 20px; }
+body.vam-2026 .small-box h3 { color: var(--ppt-ink); font-size: 27px; font-weight: 760; }
+body.vam-2026 .small-box p { color: var(--ppt-muted); font-size: 12px; }
+body.vam-2026 .small-box .icon { color: rgba(23,105,224,.14); }
+body.vam-2026 .small-box > .small-box-footer { color: #fff; background: var(--ppt-blue); }
+body.vam-2026 .form-control, body.vam-2026 input[type="text"], body.vam-2026 input[type="email"], body.vam-2026 input[type="password"], body.vam-2026 input[type="number"], body.vam-2026 textarea, body.vam-2026 select {
+  min-height: 39px;
+  border: 1px solid #d9e2ed;
+  border-radius: 9px;
+  color: #263d59;
+  background-color: #fff;
+  box-shadow: none;
+}
+body.vam-2026 .form-control:focus, body.vam-2026 input:focus, body.vam-2026 textarea:focus, body.vam-2026 select:focus { border-color: #80b5f4; box-shadow: 0 0 0 3px rgba(23,105,224,.1); outline: 0; }
+body.vam-2026 label { color: #42566f; font-size: 12px; font-weight: 680; }
+body.vam-2026 .btn { min-height: 35px; border-radius: 9px; font-weight: 650; box-shadow: none; }
+body.vam-2026 .btn-primary { border-color: var(--ppt-blue); background: var(--ppt-blue); }
+body.vam-2026 .btn-primary:hover, body.vam-2026 .btn-primary:focus { border-color: #0d4fae; background: #0d4fae; }
+body.vam-2026 .btn-success { border-color: #138766; background: #138766; }
+body.vam-2026 .btn-default { border-color: #d9e2ed; color: #40556f; background: #fff; }
+body.vam-2026 .table-responsive { border: 1px solid var(--ppt-line); border-radius: 12px; }
+body.vam-2026 .table { color: #354a65; }
+body.vam-2026 .table > thead > tr > th { border-bottom: 1px solid #dbe5ef; color: #73839a; background: #f5f8fb; font-size: 10px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+body.vam-2026 .table > tbody > tr > td { border-top-color: #edf1f5; vertical-align: middle; }
+body.vam-2026 .table-striped > tbody > tr:nth-of-type(odd) { background: #fbfcfe; }
+body.vam-2026 .pagination > li > a, body.vam-2026 .pagination > li > span { border-color: var(--ppt-line); color: #536a84; }
+body.vam-2026 .pagination > .active > a, body.vam-2026 .pagination > .active > span { border-color: var(--ppt-blue); background: var(--ppt-blue); }
+body.vam-2026 .dataTables_wrapper .dataTables_filter input, body.vam-2026 .dataTables_wrapper .dataTables_length select { min-height: 34px; margin-left: 7px; border: 1px solid #d9e2ed; border-radius: 8px; color: #344b66; background: #fff; }
+body.vam-2026 .nav-tabs-custom > .nav-tabs { border-bottom-color: #e7edf4; background: #fbfcfe; }
+body.vam-2026 .nav-tabs-custom > .nav-tabs > li > a { color: #718198; font-weight: 650; }
+body.vam-2026 .nav-tabs-custom > .nav-tabs > li.active > a { border-top-color: var(--ppt-blue); color: var(--ppt-blue); }
+body.vam-2026 .main-footer { padding: 16px 32px; border-top: 1px solid var(--ppt-line); color: #8492a5; background: #fff; font-size: 11px; }
+body.vam-2026 .alert, body.vam-2026 .callout { border: 1px solid var(--ppt-line); border-radius: 11px; box-shadow: none; }
+body.vam-2026 .alert-success { border-color: #bdebd8; color: #17664b; background: #edfbf5; }
+body.vam-2026 .alert-danger, body.vam-2026 .callout-danger { border-color: #f2c9c9; color: #8e3333; background: #fff2f2; }
+body.vam-2026 .alert-warning { border-color: #f1dfb5; color: #775519; background: #fff9e9; }
+body.vam-2026 .modal-content { overflow: hidden; border: 1px solid var(--ppt-line); border-radius: 17px; box-shadow: 0 22px 60px rgba(11, 31, 56, .22); }
+body.vam-2026 .modal-header, body.vam-2026 .modal-footer { border-color: #edf1f5; background: #fbfcfe; }
+body.vam-2026 .modal-title { color: var(--ppt-ink); font-weight: 730; }
+body.vam-2026 .login-page { min-height: 100vh; background: radial-gradient(circle at 18% 10%, rgba(57,200,213,.16), transparent 27%), linear-gradient(135deg, #0a1c32 0%, #12365b 100%); }
+body.vam-2026 .login-box, body.vam-2026 .register-box { width: min(420px, calc(100% - 28px)); margin: 6vh auto; }
+body.vam-2026 .login-logo, body.vam-2026 .register-logo { color: #fff; font-size: 26px; font-weight: 800; letter-spacing: .06em; }
+body.vam-2026 .login-box-body, body.vam-2026 .register-box-body { padding: 30px; border: 1px solid rgba(255,255,255,.35); border-radius: 16px; background: rgba(255,255,255,.97); box-shadow: 0 24px 60px rgba(0,0,0,.22); }
+body.vam-2026 .content-header, body.vam-2026 .content { max-width: 1680px; margin-right: auto; margin-left: auto; }
+body.vam-2026 a:focus-visible, body.vam-2026 button:focus-visible, body.vam-2026 input:focus-visible { outline: 3px solid rgba(57,200,213,.55); outline-offset: 2px; }
+
+@media (min-width: 768px) {
+  body.vam-2026.sidebar-mini.sidebar-collapse .main-sidebar { width: 66px !important; }
+  body.vam-2026.sidebar-mini.sidebar-collapse .main-header .logo { width: 66px !important; }
+  body.vam-2026.sidebar-mini.sidebar-collapse .main-header .logo .logo-lg { display: none !important; }
+  body.vam-2026.sidebar-mini.sidebar-collapse .content-wrapper, body.vam-2026.sidebar-mini.sidebar-collapse .right-side { margin-left: 66px; }
+  body.vam-2026.sidebar-mini.sidebar-collapse .main-header .navbar { margin-left: 66px; }
+}
+@media (max-width: 767px) {
+  body.vam-2026 .main-header { max-height: 62px; }
+  body.vam-2026 .main-header .logo { position: absolute; top: 0; left: 0; z-index: 1001; float: left; width: 196px; height: 62px; justify-content: flex-start; padding-left: 15px; }
+  body.vam-2026 .logo-mini { width: 34px; height: 34px; }
+  body.vam-2026 .logo-lg { gap: 5px; font-size: 13px; }
+  body.vam-2026 .logo-lg small { font-size: 8px; }
+  body.vam-2026 .main-header .navbar { float: none; min-height: 62px; margin-left: 196px; }
+  body.vam-2026 .main-header .sidebar-toggle { height: 62px; padding: 21px 16px; }
+  body.vam-2026 .main-sidebar { padding-top: 62px; }
+  body.vam-2026 .content-wrapper, body.vam-2026 .right-side { margin-left: 0; }
+  body.vam-2026 .content-header { padding: 22px 17px 0; }
+  body.vam-2026 .content { padding: 16px 14px 26px; }
+  body.vam-2026 .box-body { padding: 15px; }
+  body.vam-2026 .user-panel { margin-right: 12px; margin-left: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.vam-2026 *, body.vam-2026 *::before, body.vam-2026 *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}

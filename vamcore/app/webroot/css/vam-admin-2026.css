@@ -1,0 +1,151 @@
+:root {
+  --vam-ink: #14253d;
+  --vam-muted: #738198;
+  --vam-blue: #1769e0;
+  --vam-blue-dark: #0d4fae;
+  --vam-cyan: #39c8d5;
+  --vam-line: #e2e8f0;
+  --vam-paper: #ffffff;
+  --vam-canvas: #f3f6fa;
+  --vam-sidebar: #0b1b31;
+  --vam-sidebar-soft: #132842;
+  --vam-radius: 16px;
+  --vam-shadow: 0 14px 36px rgba(16, 40, 75, .07);
+}
+
+* { box-sizing: border-box; }
+html { min-height: 100%; background: var(--vam-canvas); }
+body.vam-admin-shell {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--vam-ink);
+  background: var(--vam-canvas);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+body.vam-admin-shell a { color: var(--vam-blue); }
+body.vam-admin-shell a:hover { color: var(--vam-blue-dark); }
+.vam-icon-definitions { position: absolute; width: 0; height: 0; overflow: hidden; }
+.vam-admin-app { min-height: 100vh; }
+.vam-admin-sidebar {
+  position: fixed;
+  z-index: 1040;
+  inset: 0 auto 0 0;
+  display: flex;
+  width: 286px;
+  flex-direction: column;
+  padding: 24px 17px 15px;
+  color: #e8f0fa;
+  background: radial-gradient(ellipse at 15% 0%, rgba(42, 117, 186, .27), transparent 35%), var(--vam-sidebar);
+  box-shadow: 12px 0 30px rgba(4, 19, 38, .09);
+  transition: width .22s ease, transform .22s ease;
+}
+.vam-admin-brand { display: flex; align-items: center; gap: 12px; min-height: 48px; color: #fff !important; text-decoration: none !important; }
+.vam-brand-mark { display: grid; width: 44px; height: 44px; place-items: center; border: 1px solid rgba(91, 203, 230, .46); border-radius: 14px; color: #77e0ed; background: rgba(44, 149, 196, .16); }
+.vam-brand-mark svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.vam-brand-copy { display: grid; gap: 4px; line-height: 1; }
+.vam-brand-copy strong { font-size: 15px; font-weight: 800; letter-spacing: .12em; }
+.vam-brand-copy small { color: #91a6bf; font-size: 9px; font-weight: 700; letter-spacing: .17em; }
+.vam-sidebar-status { display: flex; align-items: center; gap: 9px; margin: 25px 2px 16px; padding: 11px 12px; border: 1px solid rgba(179, 204, 231, .12); border-radius: 12px; color: #bdcce0; background: rgba(255, 255, 255, .045); font-size: 11px; font-weight: 650; letter-spacing: .015em; }
+.vam-status-dot { width: 8px; height: 8px; flex: 0 0 auto; border-radius: 50%; background: #46d2ae; box-shadow: 0 0 0 4px rgba(70, 210, 174, .12); }
+.vam-module-search { display: flex; height: 42px; align-items: center; gap: 9px; margin: 0 1px 22px; padding: 0 11px; border: 1px solid rgba(189, 210, 235, .16); border-radius: 11px; color: #8298b4; background: rgba(255, 255, 255, .055); }
+.vam-module-search svg { width: 16px; height: 16px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.vam-module-search input { width: 100%; min-width: 0; border: 0; outline: 0; color: #f6f9ff; background: transparent; font: inherit; font-size: 12px; }
+.vam-module-search input::placeholder { color: #8298b4; }
+.vam-module-search kbd { padding: 2px 5px; border: 1px solid rgba(197, 216, 240, .19); border-radius: 5px; color: #9dafc4; background: rgba(255,255,255,.06); font-size: 10px; }
+.vam-admin-navigation { min-height: 0; flex: 1; overflow: auto; padding: 0 1px 10px; scrollbar-color: rgba(154, 178, 207, .3) transparent; scrollbar-width: thin; }
+.vam-nav-group { margin: 0 0 19px; }
+.vam-nav-group h2 { margin: 0 0 8px 11px; color: #7389a5; font-size: 9px; font-weight: 800; letter-spacing: .17em; }
+.vam-nav-item { position: relative; display: flex; min-height: 40px; align-items: center; gap: 12px; margin: 3px 0; padding: 8px 10px; border: 1px solid transparent; border-radius: 10px; color: #bbc9dc !important; text-decoration: none !important; font-size: 12px; font-weight: 570; transition: background .16s ease, color .16s ease, transform .16s ease; }
+.vam-nav-item:hover { transform: translateX(2px); color: #fff !important; background: rgba(255,255,255,.075); }
+.vam-nav-item.is-active { border-color: rgba(85, 177, 238, .2); color: #fff !important; background: linear-gradient(100deg, rgba(31, 112, 211, .35), rgba(31, 112, 211, .13)); box-shadow: inset 3px 0 #58cbe2; }
+.vam-nav-icon { width: 18px; height: 18px; flex: 0 0 auto; fill: none; stroke: #88a6c7; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
+.vam-nav-item.is-active .vam-nav-icon, .vam-nav-item:hover .vam-nav-icon { stroke: #77e0ed; }
+.vam-nav-active-dot { width: 5px; height: 5px; margin-left: auto; border-radius: 50%; background: #6cdaea; }
+.vam-nav-group.is-empty { display: none; }
+.vam-nav-item[hidden] { display: none !important; }
+.vam-sidebar-footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 14px 4px 2px; border-top: 1px solid rgba(190, 210, 234, .11); color: #8295ad; font-size: 10px; }
+.vam-sidebar-version { color: #bfd0e4; font-weight: 750; letter-spacing: .08em; }
+.vam-admin-main { min-height: 100vh; margin-left: 286px; transition: margin-left .22s ease; }
+.vam-admin-topbar { position: sticky; z-index: 900; top: 0; display: flex; height: 74px; align-items: center; gap: 19px; padding: 0 clamp(20px, 4vw, 54px); border-bottom: 1px solid rgba(222, 230, 240, .9); background: rgba(255,255,255,.91); backdrop-filter: blur(16px); }
+.vam-menu-toggle { display: grid; width: 40px; height: 40px; flex: 0 0 auto; align-content: center; justify-content: center; gap: 5px; padding: 0; border: 1px solid var(--vam-line); border-radius: 11px; background: #fff; cursor: pointer; }
+.vam-menu-toggle span { display: block; width: 16px; height: 2px; border-radius: 2px; background: #536982; }
+.vam-topbar-context { display: flex; align-items: center; gap: 10px; color: #8795a9; font-size: 11px; font-weight: 650; }
+.vam-topbar-context span:first-child { color: #52657d; letter-spacing: .1em; }
+.vam-topbar-context i { color: #c4ced9; font-style: normal; }
+.vam-exit-link { display: inline-flex; align-items: center; gap: 9px; margin-left: auto; padding: 10px 14px; border: 1px solid #dce5f0; border-radius: 10px; color: #334b68 !important; background: #fff; text-decoration: none !important; font-size: 11px; font-weight: 700; transition: border-color .15s, color .15s, box-shadow .15s; }
+.vam-exit-link:hover { border-color: #a8c6ef; color: var(--vam-blue) !important; box-shadow: 0 4px 12px rgba(23,105,224,.08); }
+.vam-exit-link svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.vam-admin-content { width: min(100%, 1540px); margin: 0 auto; padding: 32px clamp(20px, 4vw, 54px) 22px; }
+.vam-page-heading { display: flex; min-height: 90px; align-items: flex-end; justify-content: space-between; gap: 18px; margin-bottom: 24px; }
+.vam-page-heading p { margin: 0 0 8px; color: var(--vam-blue); font-size: 9px; font-weight: 800; letter-spacing: .2em; }
+.vam-page-heading h1 { margin: 0; color: var(--vam-ink); font-size: clamp(25px, 3vw, 34px); font-weight: 760; letter-spacing: -.045em; line-height: 1.12; }
+.vam-page-version { margin-bottom: 4px; padding: 8px 11px; border: 1px solid #dfe8f2; border-radius: 999px; color: #74849b; background: rgba(255,255,255,.72); font-size: 9px; font-weight: 750; letter-spacing: .08em; white-space: nowrap; }
+.vam-page-panel { min-height: 180px; padding: clamp(18px, 2.4vw, 32px); border: 1px solid #e3eaf2; border-radius: var(--vam-radius); background: var(--vam-paper); box-shadow: var(--vam-shadow); }
+.vam-page-panel > .container, .vam-page-panel > .container-fluid { width: 100%; padding-right: 0; padding-left: 0; }
+.vam-page-panel .page-header { margin-top: 0; border-color: var(--vam-line); }
+.vam-admin-footer { display: flex; justify-content: space-between; gap: 12px; margin-top: 25px; padding: 16px 2px; color: #8a98aa; font-size: 10px; }
+.vam-admin-redirect { width: min(460px, calc(100% - 32px)); margin: 12vh auto; padding: 32px; border: 1px solid var(--vam-line); border-radius: var(--vam-radius); background: #fff; box-shadow: var(--vam-shadow); text-align: center; }
+.vam-admin-redirect p { color: var(--vam-ink); font-size: 16px; }
+
+/* CakePHP CRUD pages: coherent controls, tables, notices and responsive overflow. */
+.vam-page-panel h2, .vam-page-panel h3, .vam-page-panel h4 { color: var(--vam-ink); font-weight: 720; letter-spacing: -.02em; }
+.vam-page-panel h2 { margin-top: 0; font-size: 22px; }
+.vam-page-panel .table-responsive { border: 1px solid var(--vam-line); border-radius: 12px; }
+.vam-page-panel table { margin-bottom: 0; border-color: var(--vam-line); }
+.vam-page-panel .table > thead > tr > th { border-bottom: 1px solid #dce5ef; color: #6c7d94; background: #f6f8fb; font-size: 10px; font-weight: 800; letter-spacing: .055em; text-transform: uppercase; }
+.vam-page-panel .table > tbody > tr > td { border-top-color: #edf1f6; color: #3d5069; vertical-align: middle; }
+.vam-page-panel .table-striped > tbody > tr:nth-of-type(odd) { background: #fbfcfe; }
+.vam-page-panel .form-control, .vam-page-panel select, .vam-page-panel input[type="text"], .vam-page-panel input[type="email"], .vam-page-panel input[type="password"], .vam-page-panel input[type="number"], .vam-page-panel textarea { min-height: 40px; border: 1px solid #d8e1ed; border-radius: 9px; color: #243a55; background: #fff; box-shadow: none; }
+.vam-page-panel textarea.form-control { min-height: 112px; }
+.vam-page-panel .form-control:focus, .vam-page-panel select:focus, .vam-page-panel textarea:focus { border-color: #7fb1f2; box-shadow: 0 0 0 3px rgba(23,105,224,.1); outline: 0; }
+.vam-page-panel label { color: #42566f; font-size: 12px; font-weight: 700; }
+.vam-page-panel .btn { min-height: 36px; border-radius: 9px; font-weight: 650; box-shadow: none; }
+.vam-page-panel .btn-primary { border-color: var(--vam-blue); color: #fff; background: var(--vam-blue); }
+.vam-page-panel .btn-primary:hover, .vam-page-panel .btn-primary:focus { border-color: var(--vam-blue-dark); background: var(--vam-blue-dark); }
+.vam-page-panel .btn-default, .vam-page-panel .btn-info, .vam-page-panel .btn-success, .vam-page-panel .btn-warning, .vam-page-panel .btn-danger { background-image: none; }
+.vam-page-panel .pagination > li > a, .vam-page-panel .pagination > li > span { border-color: var(--vam-line); color: #526982; }
+.vam-page-panel .pagination > .active > a, .vam-page-panel .pagination > .active > span { border-color: var(--vam-blue); background: var(--vam-blue); }
+.vam-admin-shell .alert, .vam-admin-shell .message { border: 1px solid #dbe6f1; border-radius: 11px; box-shadow: none; }
+.vam-admin-shell .alert-success { border-color: #bdebd8; color: #17664b; background: #edfbf5; }
+.vam-admin-shell .alert-danger, .vam-admin-shell .error-message { border-color: #f2c9c9; color: #8e3333; background: #fff2f2; }
+.vam-admin-shell .alert-warning { border-color: #f1dfb5; color: #775519; background: #fff9e9; }
+.vam-admin-shell .alert-info { border-color: #c9e5f0; color: #236179; background: #effaff; }
+.vam-admin-shell .vam-admin-content .notice { border-radius: 10px; }
+.vam-admin-shell a:focus-visible, .vam-admin-shell button:focus-visible, .vam-admin-shell input:focus-visible { outline: 3px solid rgba(61, 174, 220, .5); outline-offset: 2px; }
+.vam-sidebar-backdrop { display: none; }
+.vam-admin-shell.vam-sidebar-collapsed .vam-admin-sidebar { width: 86px; padding-right: 12px; padding-left: 12px; }
+.vam-admin-shell.vam-sidebar-collapsed .vam-admin-main { margin-left: 86px; }
+.vam-admin-shell.vam-sidebar-collapsed .vam-brand-copy, .vam-admin-shell.vam-sidebar-collapsed .vam-sidebar-status span:last-child, .vam-admin-shell.vam-sidebar-collapsed .vam-module-search, .vam-admin-shell.vam-sidebar-collapsed .vam-nav-group h2, .vam-admin-shell.vam-sidebar-collapsed .vam-nav-item span:not(.vam-nav-active-dot), .vam-admin-shell.vam-sidebar-collapsed .vam-sidebar-footer span:last-child { display: none; }
+.vam-admin-shell.vam-sidebar-collapsed .vam-admin-brand { justify-content: center; }
+.vam-admin-shell.vam-sidebar-collapsed .vam-sidebar-status { justify-content: center; padding: 12px; }
+.vam-admin-shell.vam-sidebar-collapsed .vam-nav-item { justify-content: center; padding: 10px; }
+.vam-admin-shell.vam-sidebar-collapsed .vam-nav-active-dot { position: absolute; top: 8px; right: 8px; }
+
+@media (max-width: 900px) {
+  .vam-admin-sidebar { width: min(286px, 86vw); transform: translateX(-105%); }
+  .vam-admin-main, .vam-admin-shell.vam-sidebar-collapsed .vam-admin-main { margin-left: 0; }
+  .vam-admin-shell.vam-sidebar-open .vam-admin-sidebar { transform: translateX(0); }
+  .vam-sidebar-backdrop { position: fixed; z-index: 1030; inset: 0; border: 0; background: rgba(7, 19, 35, .5); }
+  .vam-admin-shell.vam-sidebar-open .vam-sidebar-backdrop { display: block; }
+  .vam-admin-shell.vam-sidebar-collapsed .vam-admin-sidebar { width: min(286px, 86vw); padding-right: 17px; padding-left: 17px; }
+  .vam-admin-shell.vam-sidebar-collapsed .vam-brand-copy, .vam-admin-shell.vam-sidebar-collapsed .vam-sidebar-status span:last-child, .vam-admin-shell.vam-sidebar-collapsed .vam-module-search, .vam-admin-shell.vam-sidebar-collapsed .vam-nav-group h2, .vam-admin-shell.vam-sidebar-collapsed .vam-nav-item span:not(.vam-nav-active-dot), .vam-admin-shell.vam-sidebar-collapsed .vam-sidebar-footer span:last-child { display: initial; }
+  .vam-admin-shell.vam-sidebar-collapsed .vam-admin-brand { justify-content: flex-start; }
+  .vam-admin-shell.vam-sidebar-collapsed .vam-sidebar-status { justify-content: flex-start; padding: 11px 12px; }
+  .vam-admin-shell.vam-sidebar-collapsed .vam-nav-item { justify-content: flex-start; padding: 8px 10px; }
+}
+@media (max-width: 600px) {
+  .vam-admin-topbar { height: 64px; gap: 12px; padding: 0 16px; }
+  .vam-topbar-context { gap: 7px; font-size: 9px; }
+  .vam-exit-link { width: 40px; height: 40px; justify-content: center; padding: 0; }
+  .vam-exit-link span { display: none; }
+  .vam-admin-content { padding: 22px 14px 16px; }
+  .vam-page-heading { min-height: 72px; align-items: flex-start; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+  .vam-page-heading h1 { font-size: 25px; }
+  .vam-page-panel { padding: 17px 14px; border-radius: 13px; }
+  .vam-admin-footer { padding-right: 3px; padding-left: 3px; font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}

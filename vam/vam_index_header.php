@@ -72,6 +72,7 @@
 <link href="css/morris.css" rel="stylesheet">
 <!-- data tables plugins -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="css/vam-2026.css">
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
 <script src="https://cdn.datatables.net/plug-ins/1.10.12/sorting/numeric-comma.js"></script>
@@ -81,7 +82,7 @@
 <script src="js/vam.js" type="text/javascript"></script>
 <script type="text/javascript" src="simbrief.apiv1.js"></script>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini vam-2026">
 <div class="wrapper">
 <?php if ($user_logged==0) {
 ?>
@@ -89,9 +90,9 @@
     <!-- Logo -->
     <a href="./index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b></b>PPT</span>
+      <span class="logo-mini"><i class="fa fa-plane" aria-hidden="true"></i></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Private</b> Virtual</span>
+      <span class="logo-lg"><b>PPT</b><small>VIRTUAL AIRLINE</small></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -232,9 +233,9 @@ else{
     <!-- Logo -->
     <a href="./index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b></b>PPT</span>
+      <span class="logo-mini"><i class="fa fa-plane" aria-hidden="true"></i></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Private</b> Virtual</span>
+      <span class="logo-lg"><b>PPT</b><small>VIRTUAL AIRLINE</small></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -310,9 +311,9 @@ else{
             </span>
           </a>
         </li>
-        <li class="bg-green">
-          <a href="./index_vam_op.php?page=route_selection_stage1" style="background-color: rgb(0, 166, 90);">
-            <i class="fa fa-plane fa-fw" style="color: rgb(255, 255, 255);"></i><span style="color: rgb(255, 255, 255);">RESERVA DE VÔOS</span>
+        <li class="vam-nav-primary">
+          <a href="./index_vam_op.php?page=route_selection_stage1">
+            <i class="fa fa-plane fa-fw"></i><span>RESERVA DE VÔOS</span>
             <span class="treeview">
             </span>
           </a>
