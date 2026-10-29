@@ -17,11 +17,11 @@ $isAdmin = $adminId !== '' && $adminAccess;
   <?php
     echo $this->Html->meta('icon');
     echo $this->Html->css(array('bootstrap.min', 'bootstrap-theme.min'));
-    echo $this->Html->script(array('jquery.min', 'docs.min', 'bootstrap.min', 'vam-admin-2026'));
+    echo $this->Html->script(array('jquery.min', 'docs.min', 'bootstrap.min', 'ppt-flightdesk-2026'));
     echo $this->Html->script('ckeditor/ckeditor.js');
     echo $this->fetch('meta');
     echo $this->fetch('css');
-    echo $this->Html->css('vam-admin-2026');
+    echo $this->Html->css('ppt-flightdesk-2026');
     echo $this->fetch('script');
     if (!$isAdmin) {
       echo '<meta http-equiv="refresh" content="0;url=https://virtualairlinesmanager.net/">';
@@ -97,7 +97,7 @@ foreach ($adminModules as $groupName => $group) {
   }
 }
 ?>
-<svg class="vam-icon-definitions" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+<svg class="vam-icon-definitions" width="0" height="0" style="position:absolute;overflow:hidden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
   <symbol id="vam-icon-plane" viewBox="0 0 24 24"><path d="M3 12.5 21 5l-6.5 15-3.2-6.3L3 12.5Z"/><path d="m11.3 13.7 5.1-5.1"/></symbol>
   <symbol id="vam-icon-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="m19.4 13.5 1.1.9-1.4 2.4-1.4-.5a7.9 7.9 0 0 1-1.6.9l-.3 1.5h-2.8l-.3-1.5a7.9 7.9 0 0 1-1.6-.9l-1.4.5-1.4-2.4 1.1-.9a7.2 7.2 0 0 1 0-1.9l-1.1-.9 1.4-2.4 1.4.5a7.9 7.9 0 0 1 1.6-.9l.3-1.5h2.8l.3 1.5a7.9 7.9 0 0 1 1.6.9l1.4-.5 1.4 2.4-1.1.9a7.2 7.2 0 0 1 0 1.9Z"/></symbol>
   <symbol id="vam-icon-hub" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3"/><path d="M12 3.5v5m8.5 3.5h-5m-3.5 8.5v-5m-8.5-3.5h5"/></symbol>
@@ -128,7 +128,7 @@ foreach ($adminModules as $groupName => $group) {
 <div class="vam-admin-app">
   <header class="vam-flight-header">
     <a class="vam-admin-brand" href="<?php echo h($this->Html->url(array('controller' => 'Gvausers', 'action' => 'index'))); ?>">
-      <span class="vam-brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#vam-icon-plane" xlink:href="#vam-icon-plane"></use></svg></span>
+      <span class="vam-brand-mark"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#vam-icon-plane" xlink:href="#vam-icon-plane"></use></svg></span>
       <span class="vam-brand-copy"><strong>PPT<span> / </span>VIRTUAL</strong><small>FLIGHT OPERATIONS</small></span>
     </a>
     <span class="vam-header-divider" aria-hidden="true"></span>
@@ -146,10 +146,10 @@ foreach ($adminModules as $groupName => $group) {
         ?>
         <details class="vam-nav-menu<?php echo $groupActive ? ' is-current' : ''; ?>" data-vam-nav-group<?php echo $groupActive ? ' open' : ''; ?>>
           <summary>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#vam-icon-<?php echo h($group['icon']); ?>" xlink:href="#vam-icon-<?php echo h($group['icon']); ?>"></use></svg>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#vam-icon-<?php echo h($group['icon']); ?>" xlink:href="#vam-icon-<?php echo h($group['icon']); ?>"></use></svg>
             <span><?php echo h(__($groupName)); ?></span>
             <?php if ($hasActiveModule): ?><i class="vam-nav-current-mark" aria-hidden="true"></i><?php endif; ?>
-            <svg class="vam-nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            <svg class="vam-nav-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="vam-nav-popover">
             <p class="vam-nav-popover-label"><?php echo h(__($groupName)); ?> · <?php echo count($group['modules']); ?> MODULES</p>
@@ -162,7 +162,7 @@ foreach ($adminModules as $groupName => $group) {
                   $iconId = 'vam-icon-' . $module['icon'];
                 ?>
                 <a class="vam-module-link<?php echo $active ? ' is-active' : ''; ?>" href="<?php echo h($moduleUrl); ?>"<?php echo $active ? ' aria-current="page"' : ''; ?><?php echo $target; ?> data-vam-module>
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#<?php echo h($iconId); ?>" xlink:href="#<?php echo h($iconId); ?>"></use></svg>
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.65" aria-hidden="true"><use href="#<?php echo h($iconId); ?>" xlink:href="#<?php echo h($iconId); ?>"></use></svg>
                   <span><?php echo h($module['label']); ?></span>
                   <?php if ($active): ?><span class="vam-module-current-label"><?php echo h(__('CURRENT')); ?></span><?php endif; ?>
                 </a>
@@ -174,12 +174,12 @@ foreach ($adminModules as $groupName => $group) {
     </nav>
     <div class="vam-header-actions">
       <label class="vam-module-search">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.2"/><path d="m15.4 15.4 4.2 4.2"/></svg>
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.2"/><path d="m15.4 15.4 4.2 4.2"/></svg>
         <input type="search" id="vam-module-search" placeholder="Find a module" autocomplete="off" aria-label="Search administration modules">
         <kbd>/</kbd>
       </label>
       <a class="vam-pilot-link" href="../../vam/index_vam_op.php?page=pilot_options" aria-label="Return to pilot area">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5M19 5l-8 8"/><path d="M17 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h5"/></svg>
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 5h5v5M19 5l-8 8"/><path d="M17 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h5"/></svg>
         <span><?php echo h(__('Pilot area')); ?></span>
       </a>
     </div>
@@ -194,7 +194,7 @@ foreach ($adminModules as $groupName => $group) {
       </div>
       <div class="vam-route-visual" aria-hidden="true">
         <span class="vam-route-node vam-route-origin">PPT</span>
-        <svg viewBox="0 0 360 106" preserveAspectRatio="none"><path class="vam-route-line" d="M12 74 C82 74 81 22 160 22 S230 85 348 42"/><circle cx="160" cy="22" r="3"/><circle cx="348" cy="42" r="5"/></svg>
+        <svg viewBox="0 0 360 106" width="360" height="106" preserveAspectRatio="none"><path class="vam-route-line" d="M12 74 C82 74 81 22 160 22 S230 85 348 42" fill="none" stroke="rgba(175,239,221,.67)" stroke-dasharray="5 7" stroke-width="1.5"/><circle cx="160" cy="22" r="3" fill="#9de7d6"/><circle cx="348" cy="42" r="5" fill="#9de7d6"/></svg>
         <span class="vam-route-node vam-route-destination">OPS</span>
         <span class="vam-route-caption">CONTROL · 2.6</span>
       </div>

@@ -11,7 +11,7 @@
 */
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
 <title>PPT Virtual | 2.0</title>
 <meta charset="utf-8">
@@ -56,9 +56,9 @@
 <link rel=”author” href=”https://plus.google.com/u/0/108665243705425046932/“ title="Virtual Airlines Manager on Google+" />
 <link rel="icon" href="vam_favicon.png" type="image/png" sizes="16x16">
 <link rel="shortcut icon" href="images/black-eagle-and-red-sun.ico" >
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-datetimepicker.min.css"/>
 <script src="js/bootstrapValidator.min.js" type="text/javascript"></script>
 <script src="Charts/Chart.js"></script>
@@ -72,7 +72,7 @@
 <link href="css/morris.css" rel="stylesheet">
 <!-- data tables plugins -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
-<link rel="stylesheet" href="css/vam-2026.css">
+<link rel="stylesheet" href="css/ppt-airline-2026.css?v=20261029">
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
 <script src="https://cdn.datatables.net/plug-ins/1.10.12/sorting/numeric-comma.js"></script>
@@ -90,7 +90,7 @@
     <!-- Logo -->
     <a href="./index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><i class="fa fa-plane" aria-hidden="true"></i></span>
+      <span class="logo-mini"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 13 18-8-7 16-3.2-6L3 13Z"/><path d="m10.8 15 5.1-5.1"/></svg></span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>PPT</b><small>VIRTUAL AIRLINE</small></span>
     </a>
@@ -417,9 +417,9 @@ else{
     <!-- Content Header (Page header) -->
     <section class="content-header">
        <h1>
-    <a href="https://sites.google.com/view/pptvirtual" target="_blank">
+    <a href="https://sites.google.com/view/pptvirtual" target="_blank" rel="noopener noreferrer">
       Private Plane Táxi Aéreo
-      <small>A new look to your va. V2.0</small>
+      <small>Centro de operações · frota, rotas e carreira de piloto</small>
     </a>
     <div class="box-tools pull-right">
       <!-- Conteúdo relacionado às suas ferramentas aqui -->
