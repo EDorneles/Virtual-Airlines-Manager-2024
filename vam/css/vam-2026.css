@@ -91,6 +91,8 @@ body.vam-2026 .main-sidebar {
   min-height: 0 !important;
   padding-top: 0 !important;
   overflow: visible !important;
+  transform: none !important;
+  -webkit-transform: none !important;
   background: transparent;
   box-shadow: none;
 }
