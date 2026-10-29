@@ -537,3 +537,132 @@ body.vam-2026 svg:not(.vam-icon-definitions) { max-width: 100%; }
   body.vam-2026 .box:hover { transform: translateY(-2px); box-shadow: 0 17px 38px rgba(17,42,58,.1); }
 }
 @keyframes ppt-arrive { from { opacity: .72; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Compact desktop flightline: keep the masthead at the top and the complete
+   public/pilot navigation on one horizontal track. */
+body.vam-2026 { min-width: 1366px; }
+body.vam-2026 .main-header {
+  position: sticky;
+  z-index: 1105;
+  top: 0;
+  min-height: 66px;
+  height: 66px;
+  margin: 0;
+  padding: 0 36px;
+  border: 0;
+  border-radius: 0;
+  background: rgba(9,30,46,.98);
+  box-shadow: 0 8px 24px rgba(8,24,37,.18);
+}
+body.vam-2026 .main-header .logo { width: 206px; height: 66px; }
+body.vam-2026 .logo-mini { width: 39px; height: 39px; border-radius: 12px; }
+body.vam-2026 .main-header .navbar { min-height: 66px; height: 66px; }
+body.vam-2026 .main-sidebar { position: relative !important; z-index: 1100; }
+body.vam-2026 .sidebar {
+  position: sticky;
+  z-index: 1100;
+  top: 66px;
+  width: min(100%, 1760px);
+  max-width: 1760px;
+  grid-template-columns: minmax(300px, 1fr) 240px;
+  gap: 4px 22px;
+  padding: 8px 28px 11px;
+  border: 1px solid rgba(255,255,255,.76);
+  border-top: 0;
+  border-radius: 0 0 19px 19px;
+  background: rgba(248,251,252,.91);
+  box-shadow: 0 12px 28px rgba(18,42,58,.08);
+}
+body.vam-2026 .user-panel { min-height: 44px; }
+body.vam-2026 .user-panel > .image { width: 38px; }
+body.vam-2026 .user-panel > .image > img { width: 36px; height: 36px; }
+body.vam-2026 .user-panel > .info { padding-top: 1px; }
+body.vam-2026 .user-panel > .info > p { max-width: 550px; font-size: 14px; }
+body.vam-2026 .user-panel > .info > a { font-size: 12px; }
+body.vam-2026 .sidebar-form { height: 39px; border-radius: 11px; }
+body.vam-2026 .sidebar-form input[type="text"] { height: 37px; font-size: 13px; }
+body.vam-2026 .sidebar-form .btn { height: 37px; min-height: 37px; padding: 6px 10px; }
+body.vam-2026 .sidebar-menu {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 0;
+  overflow: visible !important;
+  white-space: nowrap;
+}
+body.vam-2026 .sidebar-menu > li { min-width: 0; }
+body.vam-2026 .sidebar-menu > li > a {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 6px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 720;
+}
+body.vam-2026 .sidebar-menu > li > a > .fa,
+body.vam-2026 .sidebar-menu > li > a > .glyphicon,
+body.vam-2026 .sidebar-menu > li > a > .ion { width: 17px; margin: 0; font-size: 15px; }
+body.vam-2026 .sidebar-menu > li > a > span:not(.pull-right-container):not(.treeview) { white-space: nowrap; }
+body.vam-2026 .sidebar-menu > li > a > .pull-right-container { position: static; display: inline-flex; width: auto; align-items: center; margin-left: 2px; }
+body.vam-2026 .sidebar-menu > li > a > .pull-right-container .label { position: static; margin: 0; padding: 3px 5px; font-size: 9px; }
+body.vam-2026 .sidebar-menu > li.treeview > a > .pull-right-container .fa-angle-left { display: none; }
+body.vam-2026 .sidebar-menu > li.treeview > a::after {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 1px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  content: "";
+  transform: rotate(45deg);
+  transition: transform .16s ease;
+}
+body.vam-2026 .sidebar-menu > li.treeview.menu-open > a::after,
+body.vam-2026 .sidebar-menu > li.treeview:hover > a::after { transform: rotate(225deg); }
+body.vam-2026 .sidebar-menu .treeview-menu {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(170px, 1fr));
+  gap: 3px 5px;
+  top: calc(100% + 8px);
+  min-width: 400px;
+  max-width: 520px;
+  max-height: min(68vh, 590px);
+  overflow: auto;
+  padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity .16s ease, visibility .16s ease, transform .16s ease;
+}
+body.vam-2026 .sidebar-menu > li:hover > .treeview-menu,
+body.vam-2026 .sidebar-menu > li:focus-within > .treeview-menu,
+body.vam-2026 .sidebar-menu > li.menu-open > .treeview-menu {
+  display: grid !important;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+body.vam-2026 .sidebar-menu > li.vam-menu-dismissed > .treeview-menu {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(8px) !important;
+}
+body.vam-2026 .sidebar-menu .treeview-menu > li > a {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 11px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+body.vam-2026 .content-header {
+  background:
+    linear-gradient(90deg, rgba(8,28,45,.96) 0%, rgba(11,39,56,.87) 42%, rgba(11,43,58,.42) 100%),
+    url("../images/ppt-a350-flightline-hero.jpg") center 48% / cover no-repeat;
+}
+body.vam-2026 .content-header::before { display: none; }
+body.vam-2026 .content-header::after { right: 8%; width: 25%; opacity: .55; }

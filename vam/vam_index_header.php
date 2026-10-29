@@ -72,7 +72,8 @@
 <link href="css/morris.css" rel="stylesheet">
 <!-- data tables plugins -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
-<link rel="stylesheet" href="css/ppt-airline-2026.css?v=20261029">
+<link rel="stylesheet" href="css/ppt-airline-desktop-2026.css?v=20261029">
+<script src="js/ppt-airline-2026.js?v=20261029" defer></script>
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
 <script src="https://cdn.datatables.net/plug-ins/1.10.12/sorting/numeric-comma.js"></script>
@@ -216,9 +217,13 @@
         <li><a href="https://api.whatsapp.com/send?phone=351932271334" target="_blank"><i class="fa fa-whatsapp"></i> <span> Whatsapp Contact</span>
 					</a></li>
       
-<li class="header">POWERED BY</li>
-<li><a href="https://adminlte.io/" target="_blank"><i class="fa fa-circle-o text-red"></i> <span> AdminLTE</span></a></li>
-<li><a href="http://virtualairlinesmanager.net" target="_blank"><i class="fa fa-globe text-blue"></i> <span> VAM</span></a></li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-globe fa-fw"></i><span>RECURSOS</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+          <ul class="treeview-menu">
+            <li><a href="https://adminlte.io/" target="_blank" rel="noopener noreferrer"><i class="fa fa-circle-o text-red"></i> AdminLTE</a></li>
+            <li><a href="https://virtualairlinesmanager.net" target="_blank" rel="noopener noreferrer"><i class="fa fa-globe text-blue"></i> VAM</a></li>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -387,23 +392,30 @@ else{
           </a>
         </li>
 <?php if ($_SESSION["access_administration_panel"] == 1) { ?>
-				<li><a href="../vamcore/Gvausers" target="_blank">
-            <i class="glyphicon glyphicon-briefcase fa-fw"></i> <span> PAINEL ADM</span>
-            <span class="pull-right-container">
-            </span>
-          </a>	
-				<li>
-				<a href="../vam/index.php?page=pilot_register">
-            <i class="ion ion-person-add fa-fw"></i><span> ADD NOVO PILOTO</span>
-            <span class="pull-right-container">
-						</span></a>
+		<li class="treeview">
+		  <a href="#"><i class="glyphicon glyphicon-briefcase fa-fw"></i><span> ADMIN</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+		  <ul class="treeview-menu">
+		    <li><a href="../vamcore/Gvausers" target="_blank" rel="noopener noreferrer"><i class="glyphicon glyphicon-briefcase fa-fw"></i> PAINEL ADM</a></li>
+		    <li><a href="../vam/index.php?page=pilot_register"><i class="ion ion-person-add fa-fw"></i> ADD NOVO PILOTO</a></li>
+		  </ul>
+		</li>
 <?php } ?>
-        <li class="header">LABELS</li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-graduation-cap fa-fw"></i><span>FORMAÇÃO</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+          <ul class="treeview-menu">
+            <li><a href="./index_vam_op.php?page=curso_page" target="_blank" rel="noopener noreferrer"><i class="fa fa-graduation-cap fa-fw"></i> CURSOS</a></li>
+            <li><a href="./index_vam_op.php?page=training_page" target="_blank" rel="noopener noreferrer"><i class="fa fa-certificate fa-fw"></i> TREINAMENTO</a></li>
+          </ul>
+        </li>
         <li><a href="https://api.whatsapp.com/send?phone=351932271334" target="_blank"><i class="fa fa-whatsapp"></i> <span> Whatsapp Contact</span>
 					</a></li>
-<li class="header">POWERED BY</li>
-<li><a href="https://adminlte.io/" target="_blank"><i class="fa fa-circle-o text-red"></i> <span> AdminLTE</span></a></li>
-<li><a href="http://virtualairlinesmanager.net" target="_blank"><i class="fa fa-globe text-blue"></i> <span> VAM</span></a></li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-globe fa-fw"></i><span>RECURSOS</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+          <ul class="treeview-menu">
+            <li><a href="https://adminlte.io/" target="_blank" rel="noopener noreferrer"><i class="fa fa-circle-o text-red"></i> AdminLTE</a></li>
+            <li><a href="https://virtualairlinesmanager.net" target="_blank" rel="noopener noreferrer"><i class="fa fa-globe text-blue"></i> VAM</a></li>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

@@ -65,7 +65,7 @@
   }
 
   header.addEventListener('click', function (event) {
-    if (event.target.closest('[data-vam-module]')) {
+    if (event.target.closest('[data-vam-module], .vam-pilot-link')) {
       groups.forEach(function (group) {
         group.open = false;
       });

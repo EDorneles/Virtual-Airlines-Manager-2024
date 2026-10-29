@@ -24,7 +24,6 @@ body.vam-admin-shell .vam-page-panel .box,body.vam-admin-shell .vam-page-panel .
 body.vam-admin-shell .vam-page-panel .modal-content{overflow:hidden;border:1px solid rgba(255,255,255,.9);border-radius:22px;background:rgba(249,253,254,.95);box-shadow:0 30px 90px rgba(18,47,62,.25)}body.vam-admin-shell .vam-page-panel .modal-header,body.vam-admin-shell .vam-page-panel .modal-footer{border-color:rgba(76,116,132,.13);background:rgba(239,247,248,.72)}
 .vam-flight-header a:focus-visible,.vam-flight-header summary:focus-visible,.vam-flight-header input:focus-visible,.vam-page-panel a:focus-visible,.vam-page-panel button:focus-visible{outline:3px solid rgba(8,127,134,.5);outline-offset:3px}
 @keyframes vam-arrive{from{opacity:0;translate:0 9px}to{opacity:1;translate:0 0}}@keyframes vam-menu-in{from{opacity:0;translate:0 5px}to{opacity:1;translate:0 0}}@keyframes vam-pulse{50%{box-shadow:0 0 0 8px rgba(137,227,194,.04)}}@keyframes vam-dash{to{stroke-dashoffset:-144}}
-@media(max-width:1360px){.vam-flight-header{flex-wrap:wrap;gap:8px 15px;padding-top:10px;padding-bottom:10px}.vam-admin-brand{min-width:180px}.vam-header-divider{display:none}.vam-flight-nav{order:3;width:100%;justify-content:flex-start;overflow:visible}.vam-header-actions{margin-left:auto}}
 @media(prefers-reduced-motion:reduce){body.vam-admin-shell *,body.vam-admin-shell *:before,body.vam-admin-shell *:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 /* Explicit desktop icon sizing keeps the inline sprite stable if panel CSS is cached. */
 body.vam-admin-shell svg:not(.vam-icon-definitions){display:block;max-width:none!important;flex:0 0 auto}
@@ -44,3 +43,14 @@ body.vam-admin-shell .vam-module-search input{color:#f1f7f6}body.vam-admin-shell
 body.vam-admin-shell .vam-module-search kbd{border-color:rgba(229,241,241,.19);color:#b8cbd0;background:rgba(255,255,255,.07)}
 body.vam-admin-shell .vam-pilot-link{border-color:rgba(141,213,201,.25);color:#d1eee8!important;background:rgba(27,104,108,.34)}
 body.vam-admin-shell .vam-pilot-link:hover{color:#f4fbfa!important;background:rgba(255,255,255,.1)}
+body.vam-admin-shell .vam-flight-header{display:flex;flex-wrap:nowrap;min-height:72px;gap:14px;padding:8px 28px;white-space:nowrap}
+body.vam-admin-shell .vam-admin-brand{min-width:178px}
+body.vam-admin-shell .vam-flight-nav{flex:1 1 auto;justify-content:center;gap:2px;overflow:visible}
+body.vam-admin-shell .vam-nav-menu>summary{min-height:44px;gap:7px;padding:0 10px;font-size:13px;white-space:nowrap}
+body.vam-admin-shell .vam-header-actions{gap:8px}
+body.vam-admin-shell .vam-module-search{width:clamp(138px,13vw,190px);height:42px}
+body.vam-admin-shell .vam-module-search:focus-within{width:clamp(160px,15vw,218px)}
+body.vam-admin-shell .vam-pilot-link{min-height:42px;padding:0 11px;font-size:13px}
+body.vam-admin-shell .vam-nav-popover{top:calc(100% + 9px);max-height:min(70vh,620px);overflow:auto}
+body.vam-admin-shell .vam-page-intro{background:linear-gradient(90deg,rgba(8,31,48,.97) 0%,rgba(12,44,59,.88) 42%,rgba(13,54,65,.44) 100%),url("../../vam/images/ppt-a350-flightline-hero.jpg") right 48%/cover no-repeat;}
+body.vam-admin-shell .vam-page-intro:before{display:none}

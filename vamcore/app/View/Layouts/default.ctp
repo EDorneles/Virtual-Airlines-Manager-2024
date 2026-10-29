@@ -17,11 +17,11 @@ $isAdmin = $adminId !== '' && $adminAccess;
   <?php
     echo $this->Html->meta('icon');
     echo $this->Html->css(array('bootstrap.min', 'bootstrap-theme.min'));
-    echo $this->Html->script(array('jquery.min', 'docs.min', 'bootstrap.min', 'ppt-flightdesk-2026'));
+    echo $this->Html->script(array('jquery.min', 'docs.min', 'bootstrap.min', 'ppt-flightdesk-desktop-2026'));
     echo $this->Html->script('ckeditor/ckeditor.js');
     echo $this->fetch('meta');
     echo $this->fetch('css');
-    echo $this->Html->css('ppt-flightdesk-2026');
+    echo $this->Html->css('ppt-flightdesk-desktop-2026');
     echo $this->fetch('script');
     if (!$isAdmin) {
       echo '<meta http-equiv="refresh" content="0;url=https://virtualairlinesmanager.net/">';
@@ -144,7 +144,7 @@ foreach ($adminModules as $groupName => $group) {
             }
           }
         ?>
-        <details class="vam-nav-menu<?php echo $groupActive ? ' is-current' : ''; ?>" data-vam-nav-group<?php echo $groupActive ? ' open' : ''; ?>>
+        <details class="vam-nav-menu<?php echo $groupActive ? ' is-current' : ''; ?>" data-vam-nav-group>
           <summary>
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><use href="#vam-icon-<?php echo h($group['icon']); ?>" xlink:href="#vam-icon-<?php echo h($group['icon']); ?>"></use></svg>
             <span><?php echo h(__($groupName)); ?></span>
