@@ -75,6 +75,16 @@ $db_username = (string)$vamDatabaseConfig['username'];
 $db_password = (string)$vamDatabaseConfig['password'];
 $db_charset = isset($vamDatabaseConfig['charset']) ? (string)$vamDatabaseConfig['charset'] : 'utf8mb4';
 
+// CakePHP 2 includes app/Config/database.php from inside
+// ConnectionManager::_init(). That means these variables would otherwise
+// live only in that method's local scope, while DATABASE_CONFIG reads them
+// from $GLOBALS. Export the shared values explicitly for the Cake adapter.
+$GLOBALS['db_host'] = $db_host;
+$GLOBALS['db_database'] = $db_database;
+$GLOBALS['db_username'] = $db_username;
+$GLOBALS['db_password'] = $db_password;
+$GLOBALS['db_charset'] = $db_charset;
+
 // PHP 8.1+ enables strict mysqli exceptions by default. Older VAM code checks
 // query return values explicitly, so keep those checks working consistently.
 if (function_exists('mysqli_report')) {

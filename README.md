@@ -12,11 +12,11 @@ Fork of VAM 2.6 with additional Portuguese pages and modules.
 6. Make `vam/uploads/` and `vamcore/app/tmp/` writable by the website subscription user. Use the narrowest permissions Plesk allows; do not make the whole project world-writable.
 7. Configure the sender address in `vamcore/app/Config/email.php`, then change the seeded administrator password before opening registration to pilots.
 
-The same database settings feed the plain PHP pages and CakePHP's database connection. You can instead set `VAM_CONFIG_FILE` to an absolute path outside the document root, or define `VAM_DB_HOST`, `VAM_DB_NAME`, `VAM_DB_USER`, and `VAM_DB_PASSWORD` in the PHP application's environment.
+The same database settings feed the plain PHP pages and CakePHP's database connection. You can instead set `VAM_CONFIG_FILE` to an absolute path outside the document root, or define `VAM_DB_HOST`, `VAM_DB_NAME`, `VAM_DB_USER`, and `VAM_DB_PASSWORD` in the PHP application's environment. CakePHP 2 calls its username field `login`; this repository maps the shared config's `username` value to that field. Do not enter credentials in `vamcore/app/Config/database.php`: it is the adapter that reads the shared file, and edits there would be replaced when CakePHP loads the external configuration.
 
 ## PHP compatibility
 
-The old VAM source used APIs removed from modern PHP. This repository now routes legacy FSACARS database calls through a `mysqli` compatibility layer, uses external configuration for database credentials, and has a CakePHP database configuration file for Plesk. The included CakePHP 2 code and some unfinished custom modules are still legacy code, so treat PHP 8.5.12 as a staging target and verify the site's public pages, login, admin panel, uploads, mail and ACARS integrations in Plesk before relying on it.
+The old VAM source used APIs removed from modern PHP. This repository now routes legacy FSACARS database calls through a `mysqli` compatibility layer, uses external configuration for database credentials, and has a CakePHP database configuration file for Plesk. CakePHP debug output is disabled by default so stack traces are not shown to visitors; use the Plesk PHP/application logs for diagnostics. The included CakePHP 2 code and some unfinished custom modules are still legacy code, so treat PHP 8.5.12 as a staging target and verify the site's public pages, login, admin panel, uploads, mail and ACARS integrations in Plesk before relying on it.
 
 ## Security note
 

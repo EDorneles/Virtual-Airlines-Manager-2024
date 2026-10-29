@@ -18,11 +18,10 @@ class DATABASE_CONFIG {
 	);
 
 	public function __construct() {
-		global $db_host, $db_database, $db_username, $db_password, $db_charset;
-		$this->default['host'] = $db_host;
-		$this->default['database'] = $db_database;
-		$this->default['login'] = $db_username;
-		$this->default['password'] = $db_password;
-		$this->default['encoding'] = $db_charset;
+		$this->default['host'] = isset($GLOBALS['db_host']) ? $GLOBALS['db_host'] : '';
+		$this->default['database'] = isset($GLOBALS['db_database']) ? $GLOBALS['db_database'] : '';
+		$this->default['login'] = isset($GLOBALS['db_username']) ? $GLOBALS['db_username'] : '';
+		$this->default['password'] = isset($GLOBALS['db_password']) ? $GLOBALS['db_password'] : '';
+		$this->default['encoding'] = isset($GLOBALS['db_charset']) ? $GLOBALS['db_charset'] : 'utf8mb4';
 	}
 }

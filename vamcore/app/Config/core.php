@@ -34,7 +34,9 @@
  * In production mode, flash messages redirect after a time interval.
  * In development mode, you need to click the flash message to continue.
  */
-	Configure::write('debug', 2);
+	// Keep CakePHP stack traces and database credentials out of public pages.
+	// Runtime details remain available in the application logs.
+	Configure::write('debug', 0);
 
 /**
  * Configure the Error handler used to handle errors for your application. By default
